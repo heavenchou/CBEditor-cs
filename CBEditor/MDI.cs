@@ -15,7 +15,7 @@ namespace CBEditor
     {
         bool IsTextChanged = false;     // 文字有沒有更改過
         string FileName = "";           // 檔名
-        public MainForm main;
+        public MainForm mainForm;
 
         public MDIForm()
         {
@@ -135,6 +135,11 @@ namespace CBEditor
             }
 
             Text = title;
+        }
+
+        public void ChangeSetting()
+        {
+            RichText.Font = Setting.FontStyle;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace CBEditor
     {
         string SetupLanguage;
         MDIForm childForm;
+        OptionForm optionForm = new OptionForm();
         string ProgramName = "CBEditor";
         public MainForm()
         {
@@ -26,6 +27,7 @@ namespace CBEditor
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(SetupLanguage);
             InitializeComponent();
             NewRichText();
+            optionForm.mainForm = this;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,7 +41,7 @@ namespace CBEditor
             childForm = new MDIForm();
             // Set the Parent Form of the Child window.
             childForm.MdiParent = this;
-            childForm.main = this;
+            childForm.mainForm = this;
             childForm.MaximizeBox = false;
             childForm.MinimizeBox = false;
             childForm.ControlBox = false;
@@ -78,6 +80,21 @@ namespace CBEditor
             // 只是為了讓子視窗正確卡在它的位置
             Width += 1;
             Width -= 1;
+        }
+
+        private void 選項OToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = optionForm.ShowDialog();
+            if(result == DialogResult.OK) {
+                ChangeSetting();
+            }
+
+        }
+
+        // 更新設定內容
+        public void ChangeSetting()
+        {
+            childForm.ChangeSetting();
         }
     }
 }
