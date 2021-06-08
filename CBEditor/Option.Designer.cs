@@ -30,12 +30,15 @@ namespace CBEditor
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpNormal = new System.Windows.Forms.TabPage();
+            this.btSetForeColor = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btSetBackColor = new System.Windows.Forms.Button();
+            this.btSetFont = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tpButton = new System.Windows.Forms.TabPage();
             this.btOK = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btSetFont = new System.Windows.Forms.Button();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
@@ -53,6 +56,9 @@ namespace CBEditor
             // 
             // tpNormal
             // 
+            this.tpNormal.Controls.Add(this.btSetForeColor);
+            this.tpNormal.Controls.Add(this.label2);
+            this.tpNormal.Controls.Add(this.btSetBackColor);
             this.tpNormal.Controls.Add(this.btSetFont);
             this.tpNormal.Controls.Add(this.label1);
             this.tpNormal.Location = new System.Drawing.Point(4, 34);
@@ -62,6 +68,55 @@ namespace CBEditor
             this.tpNormal.TabIndex = 0;
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
+            // 
+            // btSetForeColor
+            // 
+            this.btSetForeColor.BackColor = System.Drawing.Color.Black;
+            this.btSetForeColor.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btSetForeColor.Location = new System.Drawing.Point(129, 46);
+            this.btSetForeColor.Name = "btSetForeColor";
+            this.btSetForeColor.Size = new System.Drawing.Size(118, 40);
+            this.btSetForeColor.TabIndex = 5;
+            this.btSetForeColor.UseVisualStyleBackColor = false;
+            this.btSetForeColor.Click += new System.EventHandler(this.btSetForeColor_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "前景色";
+            // 
+            // btSetBackColor
+            // 
+            this.btSetBackColor.BackColor = System.Drawing.Color.White;
+            this.btSetBackColor.Location = new System.Drawing.Point(129, 92);
+            this.btSetBackColor.Name = "btSetBackColor";
+            this.btSetBackColor.Size = new System.Drawing.Size(118, 40);
+            this.btSetBackColor.TabIndex = 3;
+            this.btSetBackColor.UseVisualStyleBackColor = false;
+            this.btSetBackColor.Click += new System.EventHandler(this.btSetBackColor_Click);
+            // 
+            // btSetFont
+            // 
+            this.btSetFont.Location = new System.Drawing.Point(56, 164);
+            this.btSetFont.Name = "btSetFont";
+            this.btSetFont.Size = new System.Drawing.Size(118, 40);
+            this.btSetFont.TabIndex = 2;
+            this.btSetFont.Text = "設定字型";
+            this.btSetFont.UseVisualStyleBackColor = true;
+            this.btSetFont.Click += new System.EventHandler(this.btSetFont_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "背景色";
             // 
             // tpButton
             // 
@@ -94,25 +149,6 @@ namespace CBEditor
             this.btCancel.Text = "取消";
             this.btCancel.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "編輯畫面背景色";
-            // 
-            // btSetFont
-            // 
-            this.btSetFont.Location = new System.Drawing.Point(56, 164);
-            this.btSetFont.Name = "btSetFont";
-            this.btSetFont.Size = new System.Drawing.Size(118, 40);
-            this.btSetFont.TabIndex = 2;
-            this.btSetFont.Text = "設定字型";
-            this.btSetFont.UseVisualStyleBackColor = true;
-            this.btSetFont.Click += new System.EventHandler(this.btSetFont_Click);
-            // 
             // OptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -143,5 +179,8 @@ namespace CBEditor
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.FontDialog fontDialog;
+        private System.Windows.Forms.Button btSetBackColor;
+        private System.Windows.Forms.Button btSetForeColor;
+        private System.Windows.Forms.Label label2;
     }
 }

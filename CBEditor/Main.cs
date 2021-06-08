@@ -28,6 +28,8 @@ namespace CBEditor
             InitializeComponent();
             NewRichText();
             optionForm.mainForm = this;
+            Setting.LoadFromFile();     // 讀取設定
+            ChangeSetting();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -84,6 +86,7 @@ namespace CBEditor
 
         private void 選項OToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            optionForm.LoadFromSetting();
             DialogResult result = optionForm.ShowDialog();
             if(result == DialogResult.OK) {
                 ChangeSetting();

@@ -139,7 +139,9 @@ namespace CBEditor
 
         public void ChangeSetting()
         {
-            RichText.Font = Setting.FontStyle;
+            RichText.ForeColor = Setting.ForeColor;
+            RichText.BackColor = Setting.BackColor;
+            RichText.Font = Setting.Font;
         }
     }
 }

@@ -5,5 +5,8 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">zh-TW</Value>
     </Setting>
+    <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">微軟正黑體 Light, 12pt</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

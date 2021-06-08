@@ -35,7 +35,9 @@ namespace CBEditor
             // 
             // RichText
             // 
+            this.RichText.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::CBEditor.Properties.Settings.Default, "Font", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.RichText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RichText.Font = global::CBEditor.Properties.Settings.Default.Font;
             this.RichText.Location = new System.Drawing.Point(0, 0);
             this.RichText.Name = "RichText";
             this.RichText.Size = new System.Drawing.Size(591, 450);
@@ -58,6 +60,7 @@ namespace CBEditor
             this.ClientSize = new System.Drawing.Size(591, 450);
             this.ControlBox = false;
             this.Controls.Add(this.RichText);
+            this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
