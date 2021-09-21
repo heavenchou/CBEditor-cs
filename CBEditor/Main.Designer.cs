@@ -39,6 +39,10 @@ namespace CBEditor
             this.複製CToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.貼上PToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tbFindText = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.說明LToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.檔案FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +57,10 @@ namespace CBEditor
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.結束XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編輯EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.搜尋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.尋找下一筆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.尋找上一筆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.復原UToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.取消復原RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -75,8 +83,11 @@ namespace CBEditor
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lbContinueSignText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.按鈕說明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -92,6 +103,10 @@ namespace CBEditor
             this.複製CToolStripButton,
             this.貼上PToolStripButton,
             this.toolStripSeparator7,
+            this.toolStripLabel1,
+            this.tbFindText,
+            this.toolStripButton1,
+            this.toolStripButton2,
             this.說明LToolStripButton});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
@@ -133,29 +148,58 @@ namespace CBEditor
             this.剪下UToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.剪下UToolStripButton, "剪下UToolStripButton");
             this.剪下UToolStripButton.Name = "剪下UToolStripButton";
+            this.剪下UToolStripButton.Click += new System.EventHandler(this.剪下UToolStripButton_Click);
             // 
             // 複製CToolStripButton
             // 
             this.複製CToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.複製CToolStripButton, "複製CToolStripButton");
             this.複製CToolStripButton.Name = "複製CToolStripButton";
+            this.複製CToolStripButton.Click += new System.EventHandler(this.複製CToolStripButton_Click);
             // 
             // 貼上PToolStripButton
             // 
             this.貼上PToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.貼上PToolStripButton, "貼上PToolStripButton");
             this.貼上PToolStripButton.Name = "貼上PToolStripButton";
+            this.貼上PToolStripButton.Click += new System.EventHandler(this.貼上PToolStripButton_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            resources.ApplyResources(this.toolStripLabel1, "toolStripLabel1");
+            // 
+            // tbFindText
+            // 
+            resources.ApplyResources(this.tbFindText, "tbFindText");
+            this.tbFindText.Name = "tbFindText";
+            this.tbFindText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbFindText_KeyDown);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton1, "toolStripButton1");
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton2, "toolStripButton2");
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // 說明LToolStripButton
             // 
             this.說明LToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.說明LToolStripButton, "說明LToolStripButton");
             this.說明LToolStripButton.Name = "說明LToolStripButton";
+            this.說明LToolStripButton.Click += new System.EventHandler(this.說明LToolStripButton_Click);
             // 
             // menuStrip1
             // 
@@ -188,11 +232,13 @@ namespace CBEditor
             // 
             resources.ApplyResources(this.新增NToolStripMenuItem, "新增NToolStripMenuItem");
             this.新增NToolStripMenuItem.Name = "新增NToolStripMenuItem";
+            this.新增NToolStripMenuItem.Click += new System.EventHandler(this.新增NToolStripMenuItem_Click);
             // 
             // 開啟OToolStripMenuItem
             // 
             resources.ApplyResources(this.開啟OToolStripMenuItem, "開啟OToolStripMenuItem");
             this.開啟OToolStripMenuItem.Name = "開啟OToolStripMenuItem";
+            this.開啟OToolStripMenuItem.Click += new System.EventHandler(this.開啟OToolStripMenuItem_Click);
             // 
             // toolStripSeparator
             // 
@@ -203,11 +249,13 @@ namespace CBEditor
             // 
             resources.ApplyResources(this.儲存SToolStripMenuItem, "儲存SToolStripMenuItem");
             this.儲存SToolStripMenuItem.Name = "儲存SToolStripMenuItem";
+            this.儲存SToolStripMenuItem.Click += new System.EventHandler(this.儲存SToolStripMenuItem_Click);
             // 
             // 另存新檔AToolStripMenuItem
             // 
             this.另存新檔AToolStripMenuItem.Name = "另存新檔AToolStripMenuItem";
             resources.ApplyResources(this.另存新檔AToolStripMenuItem, "另存新檔AToolStripMenuItem");
+            this.另存新檔AToolStripMenuItem.Click += new System.EventHandler(this.另存新檔AToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -233,10 +281,15 @@ namespace CBEditor
             // 
             this.結束XToolStripMenuItem.Name = "結束XToolStripMenuItem";
             resources.ApplyResources(this.結束XToolStripMenuItem, "結束XToolStripMenuItem");
+            this.結束XToolStripMenuItem.Click += new System.EventHandler(this.結束XToolStripMenuItem_Click);
             // 
             // 編輯EToolStripMenuItem
             // 
             this.編輯EToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.搜尋ToolStripMenuItem,
+            this.尋找下一筆ToolStripMenuItem,
+            this.尋找上一筆ToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.復原UToolStripMenuItem,
             this.取消復原RToolStripMenuItem,
             this.toolStripSeparator3,
@@ -247,6 +300,29 @@ namespace CBEditor
             this.全選AToolStripMenuItem});
             this.編輯EToolStripMenuItem.Name = "編輯EToolStripMenuItem";
             resources.ApplyResources(this.編輯EToolStripMenuItem, "編輯EToolStripMenuItem");
+            // 
+            // 搜尋ToolStripMenuItem
+            // 
+            this.搜尋ToolStripMenuItem.Name = "搜尋ToolStripMenuItem";
+            resources.ApplyResources(this.搜尋ToolStripMenuItem, "搜尋ToolStripMenuItem");
+            this.搜尋ToolStripMenuItem.Click += new System.EventHandler(this.搜尋ToolStripMenuItem_Click);
+            // 
+            // 尋找下一筆ToolStripMenuItem
+            // 
+            this.尋找下一筆ToolStripMenuItem.Name = "尋找下一筆ToolStripMenuItem";
+            resources.ApplyResources(this.尋找下一筆ToolStripMenuItem, "尋找下一筆ToolStripMenuItem");
+            this.尋找下一筆ToolStripMenuItem.Click += new System.EventHandler(this.尋找下一筆ToolStripMenuItem_Click);
+            // 
+            // 尋找上一筆ToolStripMenuItem
+            // 
+            this.尋找上一筆ToolStripMenuItem.Name = "尋找上一筆ToolStripMenuItem";
+            resources.ApplyResources(this.尋找上一筆ToolStripMenuItem, "尋找上一筆ToolStripMenuItem");
+            this.尋找上一筆ToolStripMenuItem.Click += new System.EventHandler(this.尋找上一筆ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // 復原UToolStripMenuItem
             // 
@@ -269,16 +345,19 @@ namespace CBEditor
             // 
             resources.ApplyResources(this.剪下TToolStripMenuItem, "剪下TToolStripMenuItem");
             this.剪下TToolStripMenuItem.Name = "剪下TToolStripMenuItem";
+            this.剪下TToolStripMenuItem.Click += new System.EventHandler(this.剪下TToolStripMenuItem_Click);
             // 
             // 複製CToolStripMenuItem
             // 
             resources.ApplyResources(this.複製CToolStripMenuItem, "複製CToolStripMenuItem");
             this.複製CToolStripMenuItem.Name = "複製CToolStripMenuItem";
+            this.複製CToolStripMenuItem.Click += new System.EventHandler(this.複製CToolStripMenuItem_Click);
             // 
             // 貼上PToolStripMenuItem
             // 
             resources.ApplyResources(this.貼上PToolStripMenuItem, "貼上PToolStripMenuItem");
             this.貼上PToolStripMenuItem.Name = "貼上PToolStripMenuItem";
+            this.貼上PToolStripMenuItem.Click += new System.EventHandler(this.貼上PToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -289,6 +368,7 @@ namespace CBEditor
             // 
             this.全選AToolStripMenuItem.Name = "全選AToolStripMenuItem";
             resources.ApplyResources(this.全選AToolStripMenuItem, "全選AToolStripMenuItem");
+            this.全選AToolStripMenuItem.Click += new System.EventHandler(this.全選AToolStripMenuItem_Click);
             // 
             // 工具TToolStripMenuItem
             // 
@@ -315,6 +395,7 @@ namespace CBEditor
             this.內容CToolStripMenuItem,
             this.索引IToolStripMenuItem,
             this.搜尋SToolStripMenuItem,
+            this.按鈕說明ToolStripMenuItem,
             this.toolStripSeparator5,
             this.關於AToolStripMenuItem});
             this.說明HToolStripMenuItem.Name = "說明HToolStripMenuItem";
@@ -344,6 +425,7 @@ namespace CBEditor
             // 
             this.關於AToolStripMenuItem.Name = "關於AToolStripMenuItem";
             resources.ApplyResources(this.關於AToolStripMenuItem, "關於AToolStripMenuItem");
+            this.關於AToolStripMenuItem.Click += new System.EventHandler(this.關於AToolStripMenuItem_Click);
             // 
             // panelLeft
             // 
@@ -370,8 +452,21 @@ namespace CBEditor
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbContinueSignText});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
+            // 
+            // lbContinueSignText
+            // 
+            this.lbContinueSignText.Name = "lbContinueSignText";
+            resources.ApplyResources(this.lbContinueSignText, "lbContinueSignText");
+            // 
+            // 按鈕說明ToolStripMenuItem
+            // 
+            this.按鈕說明ToolStripMenuItem.Name = "按鈕說明ToolStripMenuItem";
+            resources.ApplyResources(this.按鈕說明ToolStripMenuItem, "按鈕說明ToolStripMenuItem");
+            this.按鈕說明ToolStripMenuItem.Click += new System.EventHandler(this.按鈕說明ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -393,6 +488,8 @@ namespace CBEditor
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,6 +543,16 @@ namespace CBEditor
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lbContinueSignText;
+        private System.Windows.Forms.ToolStripMenuItem 搜尋ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripTextBox tbFindText;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripMenuItem 尋找下一筆ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 尋找上一筆ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripMenuItem 按鈕說明ToolStripMenuItem;
     }
 }
 

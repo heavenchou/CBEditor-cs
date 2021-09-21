@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>354, 17</value>
-  </metadata>
-  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>187, 17</value>
-  </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>CBEditor 左右兩側按鈕簡單說明：
+
+兩側按鈕功能一樣，都是在「工具-&gt;選項」中可以增減調整。
+
+滑鼠左鍵按一下按鈕，表示一次性將按鈕的文字輸出在編輯畫面中。
+
+滑鼠右鍵按一下按鈕，按鈕會變色，表示設定該按鈕是「持續性」功能，只要滑鼠在編輯畫面用左鍵點一下，就會自動輸入按鈕的內容。
+
+再用右鍵按同樣的按鈕，就會取消該持續的功能。
+
+標點有單一符號的標點，也有像引號這種有頭尾的標點，只要選取一段文字，就會自動在頭尾加上標點。
+
+如果想暫時取消持續性按鈕的作用，可以按著 Ctrl 鍵不放，即可如正常操作滑鼠，不會自動加入標點。</value>
+  </data>
 </root>

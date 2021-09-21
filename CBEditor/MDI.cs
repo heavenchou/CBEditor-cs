@@ -82,6 +82,16 @@ namespace CBEditor
             }
             return true;
         }
+        public bool SaveAsFile()
+        {
+            if(saveFileDialog.ShowDialog() == DialogResult.OK) {
+                FileName = saveFileDialog.FileName;
+                SaveFileUtf8(FileName);
+            } else {
+                return false;
+            }
+            return true;
+        }
 
         void SaveFileUtf8(string filename)
         {
@@ -142,6 +152,77 @@ namespace CBEditor
             RichText.ForeColor = Setting.ForeColor;
             RichText.BackColor = Setting.BackColor;
             RichText.Font = Setting.Font;
+        }
+
+        private void RichText_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left) {
+                //RichText.SelectedText = mainForm.sContinueSign + RichText.SelectedText;
+            }
+        }
+
+        private void RichText_MouseUp(object sender, MouseEventArgs e)
+        {
+            if((ModifierKeys & Keys.Control) == Keys.Control) {
+            //if(ModifierKeys == Keys.Control) {
+                return;
+            }
+
+            if(e.Button == MouseButtons.Left && mainForm.sContinueSign != "") {
+
+                string sStart = mainForm.sContinueSign;
+                string sEnd = "";
+
+                int iPos = sStart.IndexOf(" ... ");
+                if(iPos >= 0) {
+                    sEnd = sStart.Substring(iPos + 5);
+                    sStart = sStart.Substring(0, iPos);
+                }
+
+                RichText.SelectedText = sStart + RichText.SelectedText + sEnd;
+            }
+        }
+
+
+        public void RichTextCut()
+        {
+            RichText.Cut();
+        }
+
+
+        public void RichTextCopy()
+        {
+            RichText.Copy();
+        }
+
+        public void RichTextPaste()
+        {
+            RichText.Paste();
+        }
+
+        public void RichTextSelectAll()
+        {
+            RichText.SelectAll();
+        }
+
+        private void 全選ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichText.SelectAll();
+        }
+
+        private void 剪下ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichText.Cut();
+        }
+
+        private void 複製ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichText.Copy();
+        }
+
+        private void 貼上ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RichText.Paste();
         }
     }
 }

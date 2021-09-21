@@ -122,7 +122,7 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+    <value>0, 27</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1018, 27</value>
@@ -240,6 +240,9 @@
   <data name="列印PToolStripButton.Text" xml:space="preserve">
     <value>列印(&amp;P)</value>
   </data>
+  <data name="列印PToolStripButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 27</value>
   </data>
@@ -316,6 +319,57 @@
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 27</value>
   </data>
+  <data name="toolStripLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 24</value>
+  </data>
+  <data name="toolStripLabel1.Text" xml:space="preserve">
+    <value>搜尋：</value>
+  </data>
+  <data name="tbFindText.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft JhengHei UI, 9pt</value>
+  </data>
+  <data name="tbFindText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 27</value>
+  </data>
+  <data name="toolStripButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 24</value>
+  </data>
+  <data name="toolStripButton1.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="toolStripButton1.ToolTipText" xml:space="preserve">
+    <value>尋找下一筆</value>
+  </data>
+  <data name="toolStripButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton2.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 24</value>
+  </data>
+  <data name="toolStripButton2.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="toolStripButton2.ToolTipText" xml:space="preserve">
+    <value>尋找上一筆</value>
+  </data>
   <data name="說明LToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -343,47 +397,11 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>146, 17</value>
   </metadata>
-  <data name="檔案FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 23</value>
-  </data>
-  <data name="檔案FToolStripMenuItem.Text" xml:space="preserve">
-    <value>檔案(&amp;F)</value>
-  </data>
-  <data name="編輯EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 23</value>
-  </data>
-  <data name="編輯EToolStripMenuItem.Text" xml:space="preserve">
-    <value>編輯(&amp;E)</value>
-  </data>
-  <data name="自訂CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 26</value>
-  </data>
-  <data name="自訂CToolStripMenuItem.Text" xml:space="preserve">
-    <value>自訂(&amp;C)</value>
-  </data>
-  <data name="選項OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
-  </data>
-  <data name="選項OToolStripMenuItem.Text" xml:space="preserve">
-    <value>選項(&amp;O)</value>
-  </data>
-  <data name="工具TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 24</value>
-  </data>
-  <data name="工具TToolStripMenuItem.Text" xml:space="preserve">
-    <value>工具(&amp;T)</value>
-  </data>
-  <data name="說明HToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 23</value>
-  </data>
-  <data name="說明HToolStripMenuItem.Text" xml:space="preserve">
-    <value>說明(&amp;H)</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 28</value>
+    <value>1018, 27</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -402,6 +420,12 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="檔案FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 23</value>
+  </data>
+  <data name="檔案FToolStripMenuItem.Text" xml:space="preserve">
+    <value>檔案(&amp;F)</value>
   </data>
   <data name="新增NToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -522,6 +546,9 @@
   <data name="列印PToolStripMenuItem.Text" xml:space="preserve">
     <value>列印(&amp;P)</value>
   </data>
+  <data name="列印PToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="預覽列印VToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -544,8 +571,14 @@
   <data name="預覽列印VToolStripMenuItem.Text" xml:space="preserve">
     <value>預覽列印(&amp;V)</value>
   </data>
+  <data name="預覽列印VToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 6</value>
+  </data>
+  <data name="toolStripSeparator2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="結束XToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 26</value>
@@ -553,26 +586,56 @@
   <data name="結束XToolStripMenuItem.Text" xml:space="preserve">
     <value>結束(&amp;X)</value>
   </data>
-  <data name="復原UToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Z</value>
+  <data name="編輯EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 23</value>
+  </data>
+  <data name="編輯EToolStripMenuItem.Text" xml:space="preserve">
+    <value>編輯(&amp;E)</value>
+  </data>
+  <data name="搜尋ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F</value>
+  </data>
+  <data name="搜尋ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 26</value>
+  </data>
+  <data name="搜尋ToolStripMenuItem.Text" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="尋找下一筆ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F3</value>
+  </data>
+  <data name="尋找下一筆ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 26</value>
+  </data>
+  <data name="尋找下一筆ToolStripMenuItem.Text" xml:space="preserve">
+    <value>尋找下一筆</value>
+  </data>
+  <data name="尋找上一筆ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F3</value>
+  </data>
+  <data name="尋找上一筆ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 26</value>
+  </data>
+  <data name="尋找上一筆ToolStripMenuItem.Text" xml:space="preserve">
+    <value>尋找上一筆</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 6</value>
   </data>
   <data name="復原UToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="復原UToolStripMenuItem.Text" xml:space="preserve">
     <value>復原(&amp;U)</value>
   </data>
-  <data name="取消復原RToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Y</value>
-  </data>
   <data name="取消復原RToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="取消復原RToolStripMenuItem.Text" xml:space="preserve">
     <value>取消復原(&amp;R)</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
+    <value>226, 6</value>
   </data>
   <data name="剪下TToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -590,11 +653,8 @@
   <data name="剪下TToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="剪下TToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+X</value>
-  </data>
   <data name="剪下TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="剪下TToolStripMenuItem.Text" xml:space="preserve">
     <value>剪下(&amp;T)</value>
@@ -616,11 +676,8 @@
   <data name="複製CToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="複製CToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
-  </data>
   <data name="複製CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="複製CToolStripMenuItem.Text" xml:space="preserve">
     <value>複製(&amp;C)</value>
@@ -644,23 +701,47 @@
   <data name="貼上PToolStripMenuItem.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="貼上PToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+V</value>
-  </data>
   <data name="貼上PToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="貼上PToolStripMenuItem.Text" xml:space="preserve">
     <value>貼上(&amp;P)</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
+    <value>226, 6</value>
   </data>
   <data name="全選AToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>229, 26</value>
   </data>
   <data name="全選AToolStripMenuItem.Text" xml:space="preserve">
     <value>全選(&amp;A)</value>
+  </data>
+  <data name="工具TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 23</value>
+  </data>
+  <data name="工具TToolStripMenuItem.Text" xml:space="preserve">
+    <value>工具(&amp;T)</value>
+  </data>
+  <data name="自訂CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 26</value>
+  </data>
+  <data name="自訂CToolStripMenuItem.Text" xml:space="preserve">
+    <value>自訂(&amp;C)</value>
+  </data>
+  <data name="自訂CToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="選項OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 26</value>
+  </data>
+  <data name="選項OToolStripMenuItem.Text" xml:space="preserve">
+    <value>選項(&amp;O)</value>
+  </data>
+  <data name="說明HToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 24</value>
+  </data>
+  <data name="說明HToolStripMenuItem.Text" xml:space="preserve">
+    <value>說明(&amp;H)</value>
   </data>
   <data name="內容CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 26</value>
@@ -668,17 +749,26 @@
   <data name="內容CToolStripMenuItem.Text" xml:space="preserve">
     <value>內容(&amp;C)</value>
   </data>
+  <data name="內容CToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="索引IToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 26</value>
   </data>
   <data name="索引IToolStripMenuItem.Text" xml:space="preserve">
     <value>索引(&amp;I)</value>
   </data>
+  <data name="索引IToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="搜尋SToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 26</value>
   </data>
   <data name="搜尋SToolStripMenuItem.Text" xml:space="preserve">
     <value>搜尋(&amp;S)</value>
+  </data>
+  <data name="搜尋SToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 6</value>
@@ -693,10 +783,10 @@
     <value>Left</value>
   </data>
   <data name="panelLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 55</value>
+    <value>0, 54</value>
   </data>
   <data name="panelLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 363</value>
+    <value>134, 364</value>
   </data>
   <data name="panelLeft.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -717,10 +807,10 @@
     <value>Right</value>
   </data>
   <data name="panelRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>893, 55</value>
+    <value>893, 54</value>
   </data>
   <data name="panelRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 363</value>
+    <value>125, 364</value>
   </data>
   <data name="panelRight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -738,10 +828,10 @@
     <value>2</value>
   </data>
   <data name="splitter1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 55</value>
+    <value>134, 54</value>
   </data>
   <data name="splitter1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 363</value>
+    <value>3, 364</value>
   </data>
   <data name="splitter1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -762,10 +852,10 @@
     <value>Right</value>
   </data>
   <data name="splitter2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>890, 55</value>
+    <value>890, 54</value>
   </data>
   <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 363</value>
+    <value>3, 364</value>
   </data>
   <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -807,7 +897,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
+  </data>
+  <data name="lbContinueSignText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="按鈕說明ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="按鈕說明ToolStripMenuItem.Text" xml:space="preserve">
+    <value>按鈕說明</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -823,6 +922,9 @@
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>CBEditor</value>
@@ -880,6 +982,30 @@
   </data>
   <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabel1.Name" xml:space="preserve">
+    <value>toolStripLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbFindText.Name" xml:space="preserve">
+    <value>tbFindText</value>
+  </data>
+  <data name="&gt;&gt;tbFindText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Name" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Name" xml:space="preserve">
+    <value>toolStripButton2</value>
+  </data>
+  <data name="&gt;&gt;toolStripButton2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;說明LToolStripButton.Name" xml:space="preserve">
     <value>說明LToolStripButton</value>
@@ -958,6 +1084,30 @@
   </data>
   <data name="&gt;&gt;編輯EToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;搜尋ToolStripMenuItem.Name" xml:space="preserve">
+    <value>搜尋ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;搜尋ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;尋找下一筆ToolStripMenuItem.Name" xml:space="preserve">
+    <value>尋找下一筆ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;尋找下一筆ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;尋找上一筆ToolStripMenuItem.Name" xml:space="preserve">
+    <value>尋找上一筆ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;尋找上一筆ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;復原UToolStripMenuItem.Name" xml:space="preserve">
     <value>復原UToolStripMenuItem</value>
@@ -1059,6 +1209,18 @@
     <value>關於AToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;關於AToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbContinueSignText.Name" xml:space="preserve">
+    <value>lbContinueSignText</value>
+  </data>
+  <data name="&gt;&gt;lbContinueSignText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;按鈕說明ToolStripMenuItem.Name" xml:space="preserve">
+    <value>按鈕說明ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;按鈕說明ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
