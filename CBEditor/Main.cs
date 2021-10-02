@@ -44,7 +44,7 @@ namespace CBEditor
             Setting.MainFormTop = Top;
             Setting.MainFormWidht = Width;
             Setting.MainFormHeight = Height;
-            Setting.MainLeftPanelWidth = panelLeft.Width;
+            Setting.MainLeftPanelWidth = panelLeft.Height;
             Setting.MainRightPanelWidth = panelRight.Width;
 
             Setting.SaveToFile();
@@ -181,7 +181,7 @@ namespace CBEditor
                 Height = Setting.MainFormHeight;
             }
             if(Setting.MainLeftPanelWidth != 0) {
-                panelLeft.Width = Setting.MainLeftPanelWidth;
+                panelLeft.Height = Setting.MainLeftPanelWidth;
             }
             if(Setting.MainRightPanelWidth != 0) {
                 panelRight.Width = Setting.MainRightPanelWidth;
@@ -200,11 +200,12 @@ namespace CBEditor
                 button.Dispose();
             }
             SingleButtonList.Clear();
-            for(int i = Setting.SingleList.Count; i > 0; i--) {
+            //for(int i = Setting.SingleList.Count; i > 0; i--) {
+            for(int i = 0; i < Setting.SingleList.Count; i++) {
                 Button button = new Button();
-                button.Text = Setting.SingleList[i - 1];
+                button.Text = Setting.SingleList[i];
                 button.Parent = panelLeft;
-                button.Dock = DockStyle.Top;
+                button.Dock = DockStyle.Right;
                 button.AutoSize = true;
                 button.Click += CheckButtonClick;
                 //button.MouseDown += CheckButtonClick;

@@ -376,7 +376,7 @@ namespace CBEditor
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 25);
             this.label3.TabIndex = 0;
-            this.label3.Text = "左側標點工具列";
+            this.label3.Text = "下方標點工具列";
             // 
             // label4
             // 

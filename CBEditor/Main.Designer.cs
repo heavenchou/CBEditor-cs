@@ -497,10 +497,10 @@ namespace CBEditor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
+            this.Controls.Add(this.splitter2);
+            this.Controls.Add(this.panelRight);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
