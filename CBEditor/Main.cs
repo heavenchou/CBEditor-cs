@@ -408,5 +408,15 @@ namespace CBEditor
         {
             按鈕說明ToolStripMenuItem_Click( sender,  e);
         }
+
+        private void tsbUndo_Click(object sender, EventArgs e)
+        {
+            childForm.RichTextUndo();
+        }
+
+        private void tsbRedo_Click(object sender, EventArgs e)
+        {
+            childForm.RichTextRedo();
+        }
     }
 }

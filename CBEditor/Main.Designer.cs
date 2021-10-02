@@ -85,6 +85,9 @@ namespace CBEditor
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbContinueSignText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsbUndo = new System.Windows.Forms.ToolStripButton();
+            this.tsbRedo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -103,6 +106,9 @@ namespace CBEditor
             this.複製CToolStripButton,
             this.貼上PToolStripButton,
             this.toolStripSeparator7,
+            this.tsbUndo,
+            this.tsbRedo,
+            this.toolStripSeparator8,
             this.toolStripLabel1,
             this.tbFindText,
             this.toolStripButton1,
@@ -468,6 +474,25 @@ namespace CBEditor
             this.lbContinueSignText.Name = "lbContinueSignText";
             resources.ApplyResources(this.lbContinueSignText, "lbContinueSignText");
             // 
+            // tsbUndo
+            // 
+            this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbUndo, "tsbUndo");
+            this.tsbUndo.Name = "tsbUndo";
+            this.tsbUndo.Click += new System.EventHandler(this.tsbUndo_Click);
+            // 
+            // tsbRedo
+            // 
+            this.tsbRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbRedo, "tsbRedo");
+            this.tsbRedo.Name = "tsbRedo";
+            this.tsbRedo.Click += new System.EventHandler(this.tsbRedo_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -553,6 +578,9 @@ namespace CBEditor
         private System.Windows.Forms.ToolStripMenuItem 尋找上一筆ToolStripMenuItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripMenuItem 按鈕說明ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbUndo;
+        private System.Windows.Forms.ToolStripButton tsbRedo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
     }
 }
 
