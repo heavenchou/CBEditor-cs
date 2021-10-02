@@ -9,13 +9,16 @@ namespace CBEditor
 {
     static public class Setting
     {
-
+        // 主視窗畫面
         static public int MainFormLeft;
         static public int MainFormTop;
         static public int MainFormWidht;
         static public int MainFormHeight;
         static public int MainLeftPanelWidth;
         static public int MainRightPanelWidth;
+
+        // 持續性按鈕是左鍵或右鍵
+        static public bool ContinueButtonIsLeft;
 
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
@@ -38,6 +41,9 @@ namespace CBEditor
             iniFile.WriteInteger(Section, "MainRightPanelWidth", MainRightPanelWidth);
 
             Section = "Option";
+
+            // 持續性按鈕是左鍵嗎？
+            iniFile.WriteBool(Section, "CountinueButtonIsLeft", ContinueButtonIsLeft);
 
             // 前/背景色
             iniFile.WriteInteger(Section, "ForeColor", ForeColor.ToArgb());
@@ -79,6 +85,9 @@ namespace CBEditor
             MainRightPanelWidth = iniFile.ReadInteger(Section, "MainRightPanelWidth", 0);
 
             Section = "Option";
+
+            // 持續性按鈕是左鍵嗎？
+            ContinueButtonIsLeft = iniFile.ReadBool(Section, "CountinueButtonIsLeft", true);
 
             // 前/背景色
             int iColor = iniFile.ReadInteger(Section, "ForeColor", Color.Black.ToArgb());

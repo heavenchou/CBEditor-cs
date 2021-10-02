@@ -76,6 +76,7 @@ namespace CBEditor
             this.內容CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.索引IToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.搜尋SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.按鈕說明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLeft = new System.Windows.Forms.Panel();
@@ -84,7 +85,6 @@ namespace CBEditor
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbContinueSignText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.按鈕說明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -416,6 +416,12 @@ namespace CBEditor
             this.搜尋SToolStripMenuItem.Name = "搜尋SToolStripMenuItem";
             resources.ApplyResources(this.搜尋SToolStripMenuItem, "搜尋SToolStripMenuItem");
             // 
+            // 按鈕說明ToolStripMenuItem
+            // 
+            this.按鈕說明ToolStripMenuItem.Name = "按鈕說明ToolStripMenuItem";
+            resources.ApplyResources(this.按鈕說明ToolStripMenuItem, "按鈕說明ToolStripMenuItem");
+            this.按鈕說明ToolStripMenuItem.Click += new System.EventHandler(this.按鈕說明ToolStripMenuItem_Click);
+            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
@@ -461,12 +467,6 @@ namespace CBEditor
             // 
             this.lbContinueSignText.Name = "lbContinueSignText";
             resources.ApplyResources(this.lbContinueSignText, "lbContinueSignText");
-            // 
-            // 按鈕說明ToolStripMenuItem
-            // 
-            this.按鈕說明ToolStripMenuItem.Name = "按鈕說明ToolStripMenuItem";
-            resources.ApplyResources(this.按鈕說明ToolStripMenuItem, "按鈕說明ToolStripMenuItem");
-            this.按鈕說明ToolStripMenuItem.Click += new System.EventHandler(this.按鈕說明ToolStripMenuItem_Click);
             // 
             // MainForm
             // 

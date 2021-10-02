@@ -206,8 +206,8 @@ namespace CBEditor
                 button.Parent = panelLeft;
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
-                button.Click += SingleButtonClick2;
-                button.MouseDown += ContinueButtonClick2;
+                button.Click += CheckButtonClick;
+                //button.MouseDown += CheckButtonClick;
                 SingleButtonList.Add(button);
             }
         }
@@ -225,8 +225,8 @@ namespace CBEditor
                 button.Parent = panelRight;
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
-                button.Click += SingleButtonClick2;
-                button.MouseDown += ContinueButtonClick2;
+                button.Click += CheckButtonClick;
+                //button.MouseDown += CheckButtonClick;
                 ContinueButtonList.Add(button);
             }
 
@@ -240,6 +240,31 @@ namespace CBEditor
             button9.Click += ContinueButtonClick;
             ContinueButtonList.Add(button9);
             */
+        }
+
+        private void CheckButtonClick(object sender, EventArgs e)
+        {
+            if((ModifierKeys & Keys.Control) == Keys.Control) {
+                SingleButtonClick(sender, e);
+            } else {
+                ContinueButtonClick(sender, e);
+            }
+        }
+        private void CheckButtonClick2(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left) {
+                if(Setting.ContinueButtonIsLeft) {
+                    ContinueButtonClick(sender, e);
+                } else {
+                    SingleButtonClick(sender, e);
+                }
+            } else {
+                if(Setting.ContinueButtonIsLeft) {
+                    SingleButtonClick(sender, e);
+                } else {
+                    ContinueButtonClick(sender, e);
+                }
+            }
         }
 
         private void SingleButtonClick(object sender, EventArgs e)
@@ -261,57 +286,15 @@ namespace CBEditor
             UnColorAllButton(); // 取消所有 Button 背景色
 
             Button button = (Button)sender;
-            if(button.Text == "取消連續") {
-                lbContinueSignText.Text = "連續標點：" + button.Text;
+            
+            if(sContinueSign == button.Text) {
+                // 按原來的按鈕, 所以取消
+                lbContinueSignText.Text = "連續標點：";
                 sContinueSign = "";
             } else {
-                if(sContinueSign == button.Text) {
-                    // 按原來的按鈕, 所以取消
-                    lbContinueSignText.Text = "連續標點：";
-                    sContinueSign = "";
-                } else {
-                    lbContinueSignText.Text = "連續標點：" + button.Text;
-                    sContinueSign = button.Text;
-                    button.BackColor = Color.Yellow;
-                }
-            }
-        }
-
-        private void SingleButtonClick2(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            string sStart = button.Text;
-            string sEnd = "";
-
-            int iPos = sStart.IndexOf(" ... ");
-            if(iPos >= 0) {
-                sEnd = sStart.Substring(iPos + 5);
-                sStart = sStart.Substring(0, iPos);
-            }
-
-            childForm.RichText.SelectedText = sStart + childForm.RichText.SelectedText + sEnd;
-        }
-        private void ContinueButtonClick2(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right) {
-
-                UnColorAllButton(); // 取消所有 Button 背景色
-
-                Button button = (Button)sender;
-                if(button.Text == "取消連續") {
-                    lbContinueSignText.Text = "連續標點：" + button.Text;
-                    sContinueSign = "";
-                } else {
-                    if(sContinueSign == button.Text) {
-                        // 按原來的按鈕, 所以取消
-                        lbContinueSignText.Text = "連續標點：";
-                        sContinueSign = "";
-                    } else {
-                        lbContinueSignText.Text = "連續標點：" + button.Text;
-                        sContinueSign = button.Text;
-                        button.BackColor = Color.Yellow;
-                    }
-                }
+                lbContinueSignText.Text = "連續標點：" + button.Text;
+                sContinueSign = button.Text;
+                button.BackColor = Color.Yellow;
             }
         }
         private void UnColorAllButton()
@@ -384,7 +367,6 @@ namespace CBEditor
                     }
                 }
             }
-
         }
 
         private void tbFindText_KeyDown(object sender, KeyEventArgs e)

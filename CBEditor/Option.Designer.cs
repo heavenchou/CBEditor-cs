@@ -30,6 +30,10 @@ namespace CBEditor
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpNormal = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rbMouseRight = new System.Windows.Forms.RadioButton();
+            this.rbMouseLeft = new System.Windows.Forms.RadioButton();
             this.btSetForeColor = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btSetBackColor = new System.Windows.Forms.Button();
@@ -67,6 +71,7 @@ namespace CBEditor
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tpButton.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -88,6 +93,7 @@ namespace CBEditor
             // 
             // tpNormal
             // 
+            this.tpNormal.Controls.Add(this.groupBox1);
             this.tpNormal.Controls.Add(this.btSetForeColor);
             this.tpNormal.Controls.Add(this.label2);
             this.tpNormal.Controls.Add(this.btSetBackColor);
@@ -100,6 +106,49 @@ namespace CBEditor
             this.tpNormal.TabIndex = 0;
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.rbMouseRight);
+            this.groupBox1.Controls.Add(this.rbMouseLeft);
+            this.groupBox1.Location = new System.Drawing.Point(20, 210);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(249, 211);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "持續性標點";
+            this.groupBox1.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(11, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(232, 89);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "請選擇持續性標點是左鍵或右鍵，另一鍵則是單次標點。";
+            // 
+            // rbMouseRight
+            // 
+            this.rbMouseRight.AutoSize = true;
+            this.rbMouseRight.Location = new System.Drawing.Point(13, 69);
+            this.rbMouseRight.Name = "rbMouseRight";
+            this.rbMouseRight.Size = new System.Drawing.Size(113, 29);
+            this.rbMouseRight.TabIndex = 1;
+            this.rbMouseRight.Text = "滑鼠右鍵";
+            this.rbMouseRight.UseVisualStyleBackColor = true;
+            // 
+            // rbMouseLeft
+            // 
+            this.rbMouseLeft.AutoSize = true;
+            this.rbMouseLeft.Checked = true;
+            this.rbMouseLeft.Location = new System.Drawing.Point(13, 34);
+            this.rbMouseLeft.Name = "rbMouseLeft";
+            this.rbMouseLeft.Size = new System.Drawing.Size(113, 29);
+            this.rbMouseLeft.TabIndex = 0;
+            this.rbMouseLeft.TabStop = true;
+            this.rbMouseLeft.Text = "滑鼠左鍵";
+            this.rbMouseLeft.UseVisualStyleBackColor = true;
             // 
             // btSetForeColor
             // 
@@ -447,6 +496,8 @@ namespace CBEditor
             this.tabControl.ResumeLayout(false);
             this.tpNormal.ResumeLayout(false);
             this.tpNormal.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tpButton.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -498,5 +549,9 @@ namespace CBEditor
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton rbMouseRight;
+        private System.Windows.Forms.RadioButton rbMouseLeft;
     }
 }
