@@ -28,14 +28,14 @@ namespace CBEditor
             btSetBackColor.BackColor = Setting.BackColor;
             fontDialog.Font = Setting.Font;
 
-            lbSingleList.Items.Clear();
+            lbDownList.Items.Clear();
             foreach(var item in Setting.SingleList) {
-                lbSingleList.Items.Add(item);
+                lbDownList.Items.Add(item);
             }
 
-            lbContinueList.Items.Clear();
+            lbRightList.Items.Clear();
             foreach(var item in Setting.ContinueList) {
-                lbContinueList.Items.Add(item);
+                lbRightList.Items.Add(item);
             }
         }
 
@@ -50,12 +50,12 @@ namespace CBEditor
 
             // 儲存單次標點
             Setting.SingleList.Clear();
-            foreach(var item in lbSingleList.Items) {
+            foreach(var item in lbDownList.Items) {
                 Setting.SingleList.Add(item.ToString());
             }
             // 儲存連續標點
             Setting.ContinueList.Clear();
-            foreach(var item in lbContinueList.Items) {
+            foreach(var item in lbRightList.Items) {
                 Setting.ContinueList.Add(item.ToString());
             }
 
@@ -90,105 +90,124 @@ namespace CBEditor
         }
 
         // 單次標點新增一筆
-        private void btSingleAdd_Click(object sender, EventArgs e)
+        private void btDownAdd_Click(object sender, EventArgs e)
         {
-            if(tbSingleStart.Text != "") {
-                string s = tbSingleStart.Text;
+            if(tbDownStart.Text != "") {
+                string s = tbDownStart.Text;
                 if(tbSingleEnd.Text != "") {
                     s += " ... " + tbSingleEnd.Text;
                 }
-                lbSingleList.Items.Add(s);
+                lbDownList.Items.Add(s);
             }
         }
 
         // 連續標點新增一筆
 
-        private void btContinueAdd_Click(object sender, EventArgs e)
+        private void btRightAdd_Click(object sender, EventArgs e)
         {
-            if(tbContinueStart.Text != "") {
-                string s = tbContinueStart.Text;
+            if(tbRightStart.Text != "") {
+                string s = tbRightStart.Text;
                 if(tbContinueEnd.Text != "") {
                     s += " ... " + tbContinueEnd.Text;
                 }
-                lbContinueList.Items.Add(s);
+                lbRightList.Items.Add(s);
             }
         }
 
         // 刪除一筆
-        private void btSingleDel_Click(object sender, EventArgs e)
+        private void btDownDel_Click(object sender, EventArgs e)
         {
-            int index = lbSingleList.SelectedIndex;
+            int index = lbDownList.SelectedIndex;
             if(index != -1) {
-                lbSingleList.Items.RemoveAt(index);
-                if(lbSingleList.Items.Count > 0) {
-                    if(index < lbSingleList.Items.Count) {
-                        lbSingleList.SelectedIndex = index;
+                lbDownList.Items.RemoveAt(index);
+                if(lbDownList.Items.Count > 0) {
+                    if(index < lbDownList.Items.Count) {
+                        lbDownList.SelectedIndex = index;
                     } else {
-                        lbSingleList.SelectedIndex = index - 1;
+                        lbDownList.SelectedIndex = index - 1;
                     }
                 }
             }
         }
-        private void btContinueDel_Click(object sender, EventArgs e)
+        private void btRightDel_Click(object sender, EventArgs e)
         {
-            int index = lbContinueList.SelectedIndex;
+            int index = lbRightList.SelectedIndex;
             if(index != -1) {
-                lbContinueList.Items.RemoveAt(index);
-                if(lbContinueList.Items.Count > 0) {
-                    if(index < lbContinueList.Items.Count) {
-                        lbContinueList.SelectedIndex = index;
+                lbRightList.Items.RemoveAt(index);
+                if(lbRightList.Items.Count > 0) {
+                    if(index < lbRightList.Items.Count) {
+                        lbRightList.SelectedIndex = index;
                     } else {
-                        lbContinueList.SelectedIndex = index - 1;
+                        lbRightList.SelectedIndex = index - 1;
                     }
                 }
             }
         }
 
         // 上移一筆
-        private void btSingleUp_Click(object sender, EventArgs e)
+        private void btDownUp_Click(object sender, EventArgs e)
         {
-            int index = lbSingleList.SelectedIndex;
+            int index = lbDownList.SelectedIndex;
             if(index > 0) {
-                var item = lbSingleList.Items[index];
-                lbSingleList.Items[index] = lbSingleList.Items[index - 1];
-                lbSingleList.Items[index-1] = item;
-                lbSingleList.SelectedIndex = index - 1;
+                var item = lbDownList.Items[index];
+                lbDownList.Items[index] = lbDownList.Items[index - 1];
+                lbDownList.Items[index-1] = item;
+                lbDownList.SelectedIndex = index - 1;
             }
         }
-        private void btContinueUp_Click(object sender, EventArgs e)
+        private void btRightUp_Click(object sender, EventArgs e)
         {
-            int index = lbContinueList.SelectedIndex;
+            int index = lbRightList.SelectedIndex;
             if(index > 0) {
-                var item = lbContinueList.Items[index];
-                lbContinueList.Items[index] = lbContinueList.Items[index - 1];
-                lbContinueList.Items[index - 1] = item;
-                lbContinueList.SelectedIndex = index - 1;
+                var item = lbRightList.Items[index];
+                lbRightList.Items[index] = lbRightList.Items[index - 1];
+                lbRightList.Items[index - 1] = item;
+                lbRightList.SelectedIndex = index - 1;
             }
 
         }
 
         // 下移一筆
-        private void btSingleDown_Click(object sender, EventArgs e)
+        private void btDownDown_Click(object sender, EventArgs e)
         {
-            int index = lbSingleList.SelectedIndex;
-            if(index != -1 && index != lbSingleList.Items.Count - 1) {
-                var item = lbSingleList.Items[index];
-                lbSingleList.Items[index] = lbSingleList.Items[index + 1];
-                lbSingleList.Items[index + 1] = item;
-                lbSingleList.SelectedIndex = index + 1;
+            int index = lbDownList.SelectedIndex;
+            if(index != -1 && index != lbDownList.Items.Count - 1) {
+                var item = lbDownList.Items[index];
+                lbDownList.Items[index] = lbDownList.Items[index + 1];
+                lbDownList.Items[index + 1] = item;
+                lbDownList.SelectedIndex = index + 1;
             }
         }
 
-        private void btContinueDown_Click(object sender, EventArgs e)
+        private void btRightDown_Click(object sender, EventArgs e)
         {
-            int index = lbContinueList.SelectedIndex;
-            if(index != -1 && index != lbContinueList.Items.Count - 1) {
-                var item = lbContinueList.Items[index];
-                lbContinueList.Items[index] = lbContinueList.Items[index + 1];
-                lbContinueList.Items[index + 1] = item;
-                lbContinueList.SelectedIndex = index + 1;
+            int index = lbRightList.SelectedIndex;
+            if(index != -1 && index != lbRightList.Items.Count - 1) {
+                var item = lbRightList.Items[index];
+                lbRightList.Items[index] = lbRightList.Items[index + 1];
+                lbRightList.Items[index + 1] = item;
+                lbRightList.SelectedIndex = index + 1;
             }
         }
 
+        private void btDown2Right_Click(object sender, EventArgs e)
+        {
+            int index = lbDownList.SelectedIndex;
+            if(index != -1) {
+                string s = lbDownList.Items[index].ToString();
+                lbRightList.Items.Add(s);
+                btDownDel_Click(sender, e);
+            }
+        }
+
+        private void btRight2Down_Click(object sender, EventArgs e)
+        {
+            int index = lbRightList.SelectedIndex;
+            if(index != -1) {
+                string s = lbRightList.Items[index].ToString();
+                lbDownList.Items.Add(s);
+                btRightDel_Click(sender, e);
+            }
+        }
     }
 }

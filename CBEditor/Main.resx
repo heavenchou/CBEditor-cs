@@ -298,16 +298,16 @@
   <data name="tsbUndo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH0SURBVDhPnZJtb9JQFMf5CMYvMDO2AROGQdnGw0oxWYi+
-        gWi2bgSUMDeyjAnFbuHBOKLvTAwfhY/QGJUH16UulhUHbU2mr/sR/pZyX0B0Jt0vOUnvuef87r0ntS3u
-        SLdt/2Am3s4sMt3mUvor7052+YWNFj8T54tG3CIlY1zPRWEyaX/yJeHfOdPi1Usk3ihYPx4gUrpEuDiE
-        P9eHk+no9jifIOUjwTf40h1xJHEw7UasJIF5p4JiZQQLMmhuiLWSihCrIFgcIGx8ezMijPqxZCTIfVDg
-        SXb0eEVG4mSI5byER1UVay9l3E0Jmisp8K6UIN7fk0BxP81wbrV18+YjwebbAbLvNTytK1jJ9/C4psK/
-        d67PbbaK5ikEO/OJdj8T9Gj5Cqv5PuY3PmZMAc1e4CEnY/Wwh1hVwYPdc2Pz8z3SN8XCtjGj/R6ilSs4
-        k63mWFC6gP/gOwLGm2MVDfPbXe2vaU/gSHVEuvrbEHR5U7B+bEyZ7SPI/sByQYFvf4hZZjxY0jOFI92u
-        R2u/4M4Koim4Lma32iLpmcKVFRJUWYXnxRlPUtbw5k5pqqxgafe0SVLW8B2KRepoAE9OyJCUNVZeSY0A
-        J+vegnjtoP9LoCyLgaNenSytETmR74RqfS1y09PDr+VGqCbTZGmdICdN/KE22x+12BGUL4u7oQAAAABJ
-        RU5ErkJggg==
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHvSURBVDhPnZL/btJQFMd5BOMLzMgmYwMxODYGrBSTheg/
+        NJqNVEckbI4sMmmbbvLDOKL/mRgehUdojDKC1NTFsuKgrcn0bx7ha1vuHxCdSf0kJ+k995zPvT2tZ2lX
+        ve75C3OZTn4p220Fc10pwHalha22NJeROCuukZIJ/qeKPJ30PmwzK7uymaldgHmtY/N4iKRwgQQ3QqQ4
+        gC/bGXszEkPKbcFXhHc6ii2xNptpQUX2rQGK1xAra6DFETYEA3FeR4wbImE9h/IKrPqJxBYU3+sIsJ1x
+        pqqBORlhtaTifs3AxgsNy096pp+VpcUdWbm7r4ISfzhh38S5uS3YfjNE4Z2JRw0da6U+HtQNRPbPxvPb
+        p5xzCsGb/Ugv53rjVOUS0dIAC1sf8o6A5s9xT9QQPewjXdOx8uzM2vx0h/TNcIttM5GDPlLVS/gen7Ym
+        AuEckeffsG69c7pqYp7tmn9MewqfNTO69guL1tdxBJvH1pT5AWL8d6yWdYQPRriZnQyW9Mzgy3UaqfpP
+        BAqy4giuCltCembwF2SGqhgI7n2RSModoWKPpio6bu99bpGUO8KHCkcdDREsynmScseaoDajojYOlZUr
+        B/1Poi81Zf2o3yBLdyRPtBvx+sBM/u/piVdaM17XaLJ0T0xUp/5Qj+c3UuoRcWzmLRwAAAAASUVORK5C
+        YII=
 </value>
   </data>
   <data name="tsbUndo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -325,16 +325,16 @@
   <data name="tsbRedo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIFSURBVDhPnZL/S1NRGMbvf+CFgoESC0fakua1pnOtqZlT
-        5+7YQqfXbGspQYXJ7YvLKTXDIugL/imDIjS2duYSygRvEkx03n3L3++f8HTvdqqNqFwfOHDOy3Menve8
-        h6lE74myja43oskXJ21CgnCjSXLy0vtoo/tdkEqqaPUQlm4ZxsC/9dqupZTxSBojkQz6Q7twhPYw+CCD
-        rumvaBHWc00e4qVypvUqYY3BbZQO+v7XXl78jMCzLJxzu+AX9uEMy7hwLwPzrTTap3dgE2VwwS0Yx1LL
-        2uW24EepZKDFtlxJKpPPs5h4KsMxswXT2JpkHEmSpuFU7uzUNiwz+zDf3oH9fhaWm2mYAp8Ux1weJYMT
-        7pWg/3EaUy8L6PCvK3rXSk8pFqXBFRebxzdhVROcm91D73wBfeEi3EsHZQPOF4tef5WHU5Rg4Fd/9liJ
-        3kO4loAEeygP+7yMvkgBg0vFskGHf41MviiAE5IS1f+GasAahI2c9W4e5lkZ5pCMzh8tnJn4kLv8JIvm
-        4dgi1VdRvrwpdd7Jwxb+ButCAbaHRXQ9oi20+1PEFUrDOPprRJVoor8t5rQvET1/4wuOXKx+vEOj/bJT
-        wgaO9q6KtFQbdd1R9hifUnQDsWVaqh2dI7aoG4j/cQr/pK6bsGoCNQU5Tku1oxr01A8l/r8NjfohwtHt
-        IWGY7/svDES4t7EWAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIGSURBVDhPnZL9S1NRHMbvf+CFgoEGiw0bS4bXms25pmbO
+        ue7GFs42W7ObIlSY3F5cTqkZFkEv+KdcKEJzW2fOQEzwJsFE591b/b4/4Wl3nmojKtcHDpz75TkPz3PP
+        YWrReiVWx78VTSMJ0hFMEm4kRQyXk5LO816gkjravYSlW4bRu9/5um+ky6OxDPyxLAYje3BE9jH0MIue
+        qS9oC67nT3mJj8qZ9uuENQo7qH5oB9/43OInjD3PwTW7B/f8AVxRBRfuZ2G+nUHn1C5sogJO2IYxkF5S
+        D3cIG3LVQI1tCaXK4y9yCD1T4JjehimwJhv9KdI6nM6fndiBZfoA5ju7sD/IwXIrA1N4o+yYLaBq0OpZ
+        FsJPMph4VcS5ax/LWn65rxqL0sInRMPoFqyVBN0z++ifK2IgWoJn8duhAedflSZfF+ASZejdKz871qL1
+        Eq5tTIY9UoB9TsFArIihxdKhQWd4jYy/LIILpGSq/42KAasPbuat9wowzygwRxR0/ahwJrSev/o0B8Nw
+        fIHq61AP6wJbctfdAmzRr7DOF2F7VELPY1pBTcBHMjBe+XVFtaiivy3G5E9K529+xrGL9T/vyKiv7HRw
+        E8f7V0Q6aoymXok9wafLGmd8iY4aR+OIL2iciT/ewj9p6iWsxrlaSUFO0lHjVCr0Nbs+/H8NleZLhKPb
+        I8Iw3wG17Awqjj+FvwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="tsbRedo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -455,25 +455,25 @@
     <value>146, 17</value>
   </metadata>
   <data name="檔案FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 24</value>
+    <value>71, 23</value>
   </data>
   <data name="檔案FToolStripMenuItem.Text" xml:space="preserve">
     <value>檔案(&amp;F)</value>
   </data>
   <data name="編輯EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 24</value>
+    <value>71, 23</value>
   </data>
   <data name="編輯EToolStripMenuItem.Text" xml:space="preserve">
     <value>編輯(&amp;E)</value>
   </data>
   <data name="工具TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 24</value>
+    <value>71, 23</value>
   </data>
   <data name="工具TToolStripMenuItem.Text" xml:space="preserve">
     <value>工具(&amp;T)</value>
   </data>
   <data name="說明HToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 24</value>
+    <value>74, 23</value>
   </data>
   <data name="說明HToolStripMenuItem.Text" xml:space="preserve">
     <value>說明(&amp;H)</value>
@@ -786,7 +786,7 @@
     <value>全選(&amp;A)</value>
   </data>
   <data name="自訂CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
+    <value>144, 26</value>
   </data>
   <data name="自訂CToolStripMenuItem.Text" xml:space="preserve">
     <value>自訂(&amp;C)</value>
@@ -795,7 +795,7 @@
     <value>False</value>
   </data>
   <data name="選項OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
+    <value>144, 26</value>
   </data>
   <data name="選項OToolStripMenuItem.Text" xml:space="preserve">
     <value>選項(&amp;O)</value>
@@ -846,7 +846,7 @@
     <value>Bottom</value>
   </data>
   <data name="panelLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 365</value>
+    <value>0, 389</value>
   </data>
   <data name="panelLeft.Size" type="System.Drawing.Size, System.Drawing">
     <value>890, 51</value>
@@ -873,7 +873,7 @@
     <value>893, 61</value>
   </data>
   <data name="panelRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 355</value>
+    <value>125, 379</value>
   </data>
   <data name="panelRight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -894,7 +894,7 @@
     <value>Bottom</value>
   </data>
   <data name="splitter1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 362</value>
+    <value>0, 386</value>
   </data>
   <data name="splitter1.Size" type="System.Drawing.Size, System.Drawing">
     <value>890, 3</value>
@@ -921,7 +921,7 @@
     <value>890, 61</value>
   </data>
   <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 355</value>
+    <value>3, 379</value>
   </data>
   <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -969,7 +969,7 @@
     <value>6</value>
   </data>
   <data name="lbContinueSignText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 16</value>
+    <value>0, 18</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1044,6 +1044,24 @@
     <value>toolStripSeparator7</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbUndo.Name" xml:space="preserve">
+    <value>tsbUndo</value>
+  </data>
+  <data name="&gt;&gt;tsbUndo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsbRedo.Name" xml:space="preserve">
+    <value>tsbRedo</value>
+  </data>
+  <data name="&gt;&gt;tsbRedo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
+    <value>toolStripSeparator8</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripLabel1.Name" xml:space="preserve">
@@ -1285,24 +1303,6 @@
   </data>
   <data name="&gt;&gt;lbContinueSignText.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbUndo.Name" xml:space="preserve">
-    <value>tsbUndo</value>
-  </data>
-  <data name="&gt;&gt;tsbUndo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbRedo.Name" xml:space="preserve">
-    <value>tsbRedo</value>
-  </data>
-  <data name="&gt;&gt;tsbRedo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator8.Name" xml:space="preserve">
-    <value>toolStripSeparator8</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

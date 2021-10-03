@@ -39,6 +39,9 @@ namespace CBEditor
             this.複製CToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.貼上PToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbUndo = new System.Windows.Forms.ToolStripButton();
+            this.tsbRedo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tbFindText = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -85,9 +88,6 @@ namespace CBEditor
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbContinueSignText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsbUndo = new System.Windows.Forms.ToolStripButton();
-            this.tsbRedo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -174,6 +174,25 @@ namespace CBEditor
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+            // 
+            // tsbUndo
+            // 
+            this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbUndo, "tsbUndo");
+            this.tsbUndo.Name = "tsbUndo";
+            this.tsbUndo.Click += new System.EventHandler(this.tsbUndo_Click);
+            // 
+            // tsbRedo
+            // 
+            this.tsbRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.tsbRedo, "tsbRedo");
+            this.tsbRedo.Name = "tsbRedo";
+            this.tsbRedo.Click += new System.EventHandler(this.tsbRedo_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // toolStripLabel1
             // 
@@ -473,25 +492,6 @@ namespace CBEditor
             // 
             this.lbContinueSignText.Name = "lbContinueSignText";
             resources.ApplyResources(this.lbContinueSignText, "lbContinueSignText");
-            // 
-            // tsbUndo
-            // 
-            this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.tsbUndo, "tsbUndo");
-            this.tsbUndo.Name = "tsbUndo";
-            this.tsbUndo.Click += new System.EventHandler(this.tsbUndo_Click);
-            // 
-            // tsbRedo
-            // 
-            this.tsbRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.tsbRedo, "tsbRedo");
-            this.tsbRedo.Name = "tsbRedo";
-            this.tsbRedo.Click += new System.EventHandler(this.tsbRedo_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // MainForm
             // 

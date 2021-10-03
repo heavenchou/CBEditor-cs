@@ -41,24 +41,24 @@ namespace CBEditor
             this.label1 = new System.Windows.Forms.Label();
             this.tpButton = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbContinueList = new System.Windows.Forms.ListBox();
+            this.lbRightList = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.tbContinueEnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbContinueStart = new System.Windows.Forms.TextBox();
+            this.tbRightStart = new System.Windows.Forms.TextBox();
             this.btContinueDown = new System.Windows.Forms.Button();
             this.btContinueUp = new System.Windows.Forms.Button();
             this.btContinueDel = new System.Windows.Forms.Button();
             this.btContinueAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbSingleList = new System.Windows.Forms.ListBox();
+            this.lbDownList = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbSingleStart = new System.Windows.Forms.TextBox();
+            this.tbDownStart = new System.Windows.Forms.TextBox();
             this.tbSingleEnd = new System.Windows.Forms.TextBox();
             this.btSingleDown = new System.Windows.Forms.Button();
             this.btSingleUp = new System.Windows.Forms.Button();
@@ -69,6 +69,8 @@ namespace CBEditor
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btDown2Right = new System.Windows.Forms.Button();
+            this.btRight2Down = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,7 +90,7 @@ namespace CBEditor
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(591, 427);
+            this.tabControl.Size = new System.Drawing.Size(598, 427);
             this.tabControl.TabIndex = 0;
             // 
             // tpNormal
@@ -102,7 +104,7 @@ namespace CBEditor
             this.tpNormal.Location = new System.Drawing.Point(4, 34);
             this.tpNormal.Name = "tpNormal";
             this.tpNormal.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNormal.Size = new System.Drawing.Size(583, 389);
+            this.tpNormal.Size = new System.Drawing.Size(611, 389);
             this.tpNormal.TabIndex = 0;
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
@@ -206,7 +208,7 @@ namespace CBEditor
             this.tpButton.Location = new System.Drawing.Point(4, 34);
             this.tpButton.Name = "tpButton";
             this.tpButton.Padding = new System.Windows.Forms.Padding(3);
-            this.tpButton.Size = new System.Drawing.Size(583, 389);
+            this.tpButton.Size = new System.Drawing.Size(590, 389);
             this.tpButton.TabIndex = 1;
             this.tpButton.Text = "按鍵";
             this.tpButton.UseVisualStyleBackColor = true;
@@ -214,7 +216,8 @@ namespace CBEditor
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lbContinueList);
+            this.panel2.Controls.Add(this.btRight2Down);
+            this.panel2.Controls.Add(this.lbRightList);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.btContinueDown);
             this.panel2.Controls.Add(this.btContinueUp);
@@ -223,18 +226,18 @@ namespace CBEditor
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(293, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(287, 383);
+            this.panel2.Size = new System.Drawing.Size(294, 383);
             this.panel2.TabIndex = 1;
             // 
             // lbContinueList
             // 
-            this.lbContinueList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbContinueList.FormattingEnabled = true;
-            this.lbContinueList.ItemHeight = 25;
-            this.lbContinueList.Location = new System.Drawing.Point(0, 90);
-            this.lbContinueList.Name = "lbContinueList";
-            this.lbContinueList.Size = new System.Drawing.Size(187, 289);
-            this.lbContinueList.TabIndex = 9;
+            this.lbRightList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbRightList.FormattingEnabled = true;
+            this.lbRightList.ItemHeight = 25;
+            this.lbRightList.Location = new System.Drawing.Point(0, 90);
+            this.lbRightList.Name = "lbContinueList";
+            this.lbRightList.Size = new System.Drawing.Size(187, 289);
+            this.lbRightList.TabIndex = 9;
             // 
             // panel5
             // 
@@ -242,11 +245,11 @@ namespace CBEditor
             this.panel5.Controls.Add(this.tbContinueEnd);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.tbContinueStart);
+            this.panel5.Controls.Add(this.tbRightStart);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(283, 90);
+            this.panel5.Size = new System.Drawing.Size(290, 90);
             this.panel5.TabIndex = 12;
             // 
             // label8
@@ -285,56 +288,57 @@ namespace CBEditor
             // 
             // tbContinueStart
             // 
-            this.tbContinueStart.Location = new System.Drawing.Point(62, 45);
-            this.tbContinueStart.Name = "tbContinueStart";
-            this.tbContinueStart.Size = new System.Drawing.Size(67, 34);
-            this.tbContinueStart.TabIndex = 3;
+            this.tbRightStart.Location = new System.Drawing.Point(62, 45);
+            this.tbRightStart.Name = "tbContinueStart";
+            this.tbRightStart.Size = new System.Drawing.Size(67, 34);
+            this.tbRightStart.TabIndex = 3;
             // 
             // btContinueDown
             // 
-            this.btContinueDown.Location = new System.Drawing.Point(199, 267);
+            this.btContinueDown.Location = new System.Drawing.Point(193, 267);
             this.btContinueDown.Name = "btContinueDown";
-            this.btContinueDown.Size = new System.Drawing.Size(61, 33);
+            this.btContinueDown.Size = new System.Drawing.Size(88, 33);
             this.btContinueDown.TabIndex = 8;
-            this.btContinueDown.Text = "下移";
+            this.btContinueDown.Text = "下移↓";
             this.btContinueDown.UseVisualStyleBackColor = true;
-            this.btContinueDown.Click += new System.EventHandler(this.btContinueDown_Click);
+            this.btContinueDown.Click += new System.EventHandler(this.btRightDown_Click);
             // 
             // btContinueUp
             // 
-            this.btContinueUp.Location = new System.Drawing.Point(199, 228);
+            this.btContinueUp.Location = new System.Drawing.Point(193, 228);
             this.btContinueUp.Name = "btContinueUp";
-            this.btContinueUp.Size = new System.Drawing.Size(61, 33);
+            this.btContinueUp.Size = new System.Drawing.Size(88, 33);
             this.btContinueUp.TabIndex = 7;
-            this.btContinueUp.Text = "上移";
+            this.btContinueUp.Text = "上移↑";
             this.btContinueUp.UseVisualStyleBackColor = true;
-            this.btContinueUp.Click += new System.EventHandler(this.btContinueUp_Click);
+            this.btContinueUp.Click += new System.EventHandler(this.btRightUp_Click);
             // 
             // btContinueDel
             // 
-            this.btContinueDel.Location = new System.Drawing.Point(199, 139);
+            this.btContinueDel.Location = new System.Drawing.Point(193, 139);
             this.btContinueDel.Name = "btContinueDel";
-            this.btContinueDel.Size = new System.Drawing.Size(61, 33);
+            this.btContinueDel.Size = new System.Drawing.Size(88, 33);
             this.btContinueDel.TabIndex = 6;
             this.btContinueDel.Text = "刪除";
             this.btContinueDel.UseVisualStyleBackColor = true;
-            this.btContinueDel.Click += new System.EventHandler(this.btContinueDel_Click);
+            this.btContinueDel.Click += new System.EventHandler(this.btRightDel_Click);
             // 
             // btContinueAdd
             // 
             this.btContinueAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btContinueAdd.Location = new System.Drawing.Point(199, 96);
+            this.btContinueAdd.Location = new System.Drawing.Point(193, 96);
             this.btContinueAdd.Name = "btContinueAdd";
-            this.btContinueAdd.Size = new System.Drawing.Size(61, 33);
+            this.btContinueAdd.Size = new System.Drawing.Size(88, 33);
             this.btContinueAdd.TabIndex = 5;
             this.btContinueAdd.Text = "新增";
             this.btContinueAdd.UseVisualStyleBackColor = false;
-            this.btContinueAdd.Click += new System.EventHandler(this.btContinueAdd_Click);
+            this.btContinueAdd.Click += new System.EventHandler(this.btRightAdd_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lbSingleList);
+            this.panel1.Controls.Add(this.btDown2Right);
+            this.panel1.Controls.Add(this.lbDownList);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btSingleDown);
             this.panel1.Controls.Add(this.btSingleUp);
@@ -348,20 +352,20 @@ namespace CBEditor
             // 
             // lbSingleList
             // 
-            this.lbSingleList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbSingleList.FormattingEnabled = true;
-            this.lbSingleList.ItemHeight = 25;
-            this.lbSingleList.Location = new System.Drawing.Point(0, 90);
-            this.lbSingleList.Name = "lbSingleList";
-            this.lbSingleList.Size = new System.Drawing.Size(187, 289);
-            this.lbSingleList.TabIndex = 9;
+            this.lbDownList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbDownList.FormattingEnabled = true;
+            this.lbDownList.ItemHeight = 25;
+            this.lbDownList.Location = new System.Drawing.Point(0, 90);
+            this.lbDownList.Name = "lbSingleList";
+            this.lbDownList.Size = new System.Drawing.Size(187, 289);
+            this.lbDownList.TabIndex = 9;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.tbSingleStart);
+            this.panel4.Controls.Add(this.tbDownStart);
             this.panel4.Controls.Add(this.tbSingleEnd);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -398,58 +402,58 @@ namespace CBEditor
             // 
             // tbSingleStart
             // 
-            this.tbSingleStart.Location = new System.Drawing.Point(63, 45);
-            this.tbSingleStart.Name = "tbSingleStart";
-            this.tbSingleStart.Size = new System.Drawing.Size(67, 34);
-            this.tbSingleStart.TabIndex = 3;
+            this.tbDownStart.Location = new System.Drawing.Point(63, 45);
+            this.tbDownStart.Name = "tbSingleStart";
+            this.tbDownStart.Size = new System.Drawing.Size(67, 34);
+            this.tbDownStart.TabIndex = 3;
             // 
             // tbSingleEnd
             // 
-            this.tbSingleEnd.Location = new System.Drawing.Point(202, 45);
+            this.tbSingleEnd.Location = new System.Drawing.Point(193, 45);
             this.tbSingleEnd.Name = "tbSingleEnd";
             this.tbSingleEnd.Size = new System.Drawing.Size(63, 34);
             this.tbSingleEnd.TabIndex = 4;
             // 
             // btSingleDown
             // 
-            this.btSingleDown.Location = new System.Drawing.Point(205, 264);
+            this.btSingleDown.Location = new System.Drawing.Point(193, 264);
             this.btSingleDown.Name = "btSingleDown";
-            this.btSingleDown.Size = new System.Drawing.Size(60, 33);
+            this.btSingleDown.Size = new System.Drawing.Size(83, 33);
             this.btSingleDown.TabIndex = 8;
-            this.btSingleDown.Text = "下移";
+            this.btSingleDown.Text = "下移↓";
             this.btSingleDown.UseVisualStyleBackColor = true;
-            this.btSingleDown.Click += new System.EventHandler(this.btSingleDown_Click);
+            this.btSingleDown.Click += new System.EventHandler(this.btDownDown_Click);
             // 
             // btSingleUp
             // 
-            this.btSingleUp.Location = new System.Drawing.Point(205, 225);
+            this.btSingleUp.Location = new System.Drawing.Point(193, 225);
             this.btSingleUp.Name = "btSingleUp";
-            this.btSingleUp.Size = new System.Drawing.Size(60, 33);
+            this.btSingleUp.Size = new System.Drawing.Size(83, 33);
             this.btSingleUp.TabIndex = 7;
-            this.btSingleUp.Text = "上移";
+            this.btSingleUp.Text = "上移↑";
             this.btSingleUp.UseVisualStyleBackColor = true;
-            this.btSingleUp.Click += new System.EventHandler(this.btSingleUp_Click);
+            this.btSingleUp.Click += new System.EventHandler(this.btDownUp_Click);
             // 
             // btSingleDel
             // 
             this.btSingleDel.BackColor = System.Drawing.Color.Transparent;
-            this.btSingleDel.Location = new System.Drawing.Point(205, 136);
+            this.btSingleDel.Location = new System.Drawing.Point(193, 136);
             this.btSingleDel.Name = "btSingleDel";
-            this.btSingleDel.Size = new System.Drawing.Size(60, 33);
+            this.btSingleDel.Size = new System.Drawing.Size(83, 33);
             this.btSingleDel.TabIndex = 6;
             this.btSingleDel.Text = "刪除";
             this.btSingleDel.UseVisualStyleBackColor = false;
-            this.btSingleDel.Click += new System.EventHandler(this.btSingleDel_Click);
+            this.btSingleDel.Click += new System.EventHandler(this.btDownDel_Click);
             // 
             // btSingleAdd
             // 
-            this.btSingleAdd.Location = new System.Drawing.Point(205, 96);
+            this.btSingleAdd.Location = new System.Drawing.Point(193, 96);
             this.btSingleAdd.Name = "btSingleAdd";
-            this.btSingleAdd.Size = new System.Drawing.Size(60, 33);
+            this.btSingleAdd.Size = new System.Drawing.Size(83, 33);
             this.btSingleAdd.TabIndex = 5;
             this.btSingleAdd.Text = "新增";
             this.btSingleAdd.UseVisualStyleBackColor = true;
-            this.btSingleAdd.Click += new System.EventHandler(this.btSingleAdd_Click);
+            this.btSingleAdd.Click += new System.EventHandler(this.btDownAdd_Click);
             // 
             // btOK
             // 
@@ -479,14 +483,34 @@ namespace CBEditor
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 427);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(591, 59);
+            this.panel3.Size = new System.Drawing.Size(598, 59);
             this.panel3.TabIndex = 3;
+            // 
+            // btDown2Right
+            // 
+            this.btDown2Right.Location = new System.Drawing.Point(193, 321);
+            this.btDown2Right.Name = "btDown2Right";
+            this.btDown2Right.Size = new System.Drawing.Size(83, 33);
+            this.btDown2Right.TabIndex = 11;
+            this.btDown2Right.Text = "右移→";
+            this.btDown2Right.UseVisualStyleBackColor = true;
+            this.btDown2Right.Click += new System.EventHandler(this.btDown2Right_Click);
+            // 
+            // btRight2Down
+            // 
+            this.btRight2Down.Location = new System.Drawing.Point(193, 321);
+            this.btRight2Down.Name = "btRight2Down";
+            this.btRight2Down.Size = new System.Drawing.Size(88, 33);
+            this.btRight2Down.TabIndex = 13;
+            this.btRight2Down.Text = "左移 ←";
+            this.btRight2Down.UseVisualStyleBackColor = true;
+            this.btRight2Down.Click += new System.EventHandler(this.btRight2Down_Click);
             // 
             // OptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 486);
+            this.ClientSize = new System.Drawing.Size(598, 486);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -530,18 +554,18 @@ namespace CBEditor
         private System.Windows.Forms.Button btSingleDel;
         private System.Windows.Forms.Button btSingleAdd;
         private System.Windows.Forms.TextBox tbSingleEnd;
-        private System.Windows.Forms.TextBox tbSingleStart;
+        private System.Windows.Forms.TextBox tbDownStart;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lbSingleList;
+        private System.Windows.Forms.ListBox lbDownList;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListBox lbContinueList;
+        private System.Windows.Forms.ListBox lbRightList;
         private System.Windows.Forms.Button btContinueDown;
         private System.Windows.Forms.Button btContinueUp;
         private System.Windows.Forms.Button btContinueDel;
         private System.Windows.Forms.Button btContinueAdd;
-        private System.Windows.Forms.TextBox tbContinueStart;
+        private System.Windows.Forms.TextBox tbRightStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbContinueEnd;
@@ -553,5 +577,7 @@ namespace CBEditor
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rbMouseRight;
         private System.Windows.Forms.RadioButton rbMouseLeft;
+        private System.Windows.Forms.Button btRight2Down;
+        private System.Windows.Forms.Button btDown2Right;
     }
 }

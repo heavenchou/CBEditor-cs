@@ -179,6 +179,19 @@ namespace CBEditor
                     sStart = sStart.Substring(0, iPos);
                 }
 
+                // 如果有按下 alt , 則是用取代模式, 所選的文字都被取代.
+                // 如果沒有選, 則是第一個字被取代
+                if(((ModifierKeys & Keys.Alt) == Keys.Alt) || (sStart == "del" && sEnd == "")) {
+                    if(RichText.SelectionLength == 0) {
+                        RichText.SelectionLength = 1;
+                    }
+                    RichText.SelectedText = "";
+                }
+
+                if(sStart == "del" && sEnd == "") {
+                    sStart = "";
+                }
+
                 RichText.SelectedText = sStart + RichText.SelectedText + sEnd;
             }
         }

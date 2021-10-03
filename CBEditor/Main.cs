@@ -230,19 +230,9 @@ namespace CBEditor
                 //button.MouseDown += CheckButtonClick;
                 ContinueButtonList.Add(button);
             }
-
-            // 第一個一定是 none 的按鈕，取消連續用的
-            /*
-            Button button9 = new Button();
-            button9.Text = "取消連續";
-            button9.Parent = panelRight;
-            button9.Dock = DockStyle.Top;
-            button9.AutoSize = true;
-            button9.Click += ContinueButtonClick;
-            ContinueButtonList.Add(button9);
-            */
         }
 
+        // 檢查有沒有按下 Ctrl，以判斷要執行哪個功能
         private void CheckButtonClick(object sender, EventArgs e)
         {
             if((ModifierKeys & Keys.Control) == Keys.Control) {
@@ -278,6 +268,19 @@ namespace CBEditor
             if(iPos >= 0) {
                 sEnd = sStart.Substring(iPos + 5);
                 sStart = sStart.Substring(0, iPos);
+            }
+
+            // 如果有按下 alt , 則是用取代模式, 所選的文字都被取代.
+            // 如果沒有選, 則是第一個字被取代
+            if(((ModifierKeys & Keys.Alt) == Keys.Alt) || (sStart == "del" && sEnd == "")) {
+                if(childForm.RichText.SelectionLength == 0) {
+                    childForm.RichText.SelectionLength = 1;
+                }
+                childForm.RichText.SelectedText = "";
+            }
+
+            if(sStart == "del" && sEnd == "") {
+                sStart = "";
             }
 
             childForm.RichText.SelectedText = sStart + childForm.RichText.SelectedText + sEnd;
