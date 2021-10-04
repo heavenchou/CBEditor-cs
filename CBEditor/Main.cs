@@ -187,14 +187,14 @@ namespace CBEditor
                 panelRight.Width = Setting.MainRightPanelWidth;
             }
 
-            LoadSingleButton();         // 載入單次的按鈕
-            LoadContinueButton();       // 載入連續的按鈕
+            LoadDownButton();         // 載入單次的按鈕
+            LoadRightButton();       // 載入連續的按鈕
             
             childForm.ChangeSetting();
         }
 
         // 載入單次的按鈕
-        void LoadSingleButton()
+        void LoadDownButton()
         {
             foreach(var button in SingleButtonList) {
                 button.Dispose();
@@ -206,7 +206,9 @@ namespace CBEditor
                 button.Text = Setting.SingleList[i];
                 button.Parent = panelLeft;
                 button.Dock = DockStyle.Right;
-                button.AutoSize = true;
+                //button.AutoSize = true;
+                button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
+                button.Width = TextRenderer.MeasureText(button.Text, button.Font).Width + 10;
                 button.Click += CheckButtonClick;
                 //button.MouseDown += CheckButtonClick;
                 SingleButtonList.Add(button);
@@ -214,7 +216,7 @@ namespace CBEditor
         }
 
         // 載入連續的按鈕
-        void LoadContinueButton()
+        void LoadRightButton()
         {
             foreach(var button in ContinueButtonList) {
                 button.Dispose();
@@ -226,7 +228,9 @@ namespace CBEditor
                 button.Parent = panelRight;
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
+                button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
                 button.Click += CheckButtonClick;
+
                 //button.MouseDown += CheckButtonClick;
                 ContinueButtonList.Add(button);
             }
@@ -239,22 +243,6 @@ namespace CBEditor
                 SingleButtonClick(sender, e);
             } else {
                 ContinueButtonClick(sender, e);
-            }
-        }
-        private void CheckButtonClick2(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Left) {
-                if(Setting.ContinueButtonIsLeft) {
-                    ContinueButtonClick(sender, e);
-                } else {
-                    SingleButtonClick(sender, e);
-                }
-            } else {
-                if(Setting.ContinueButtonIsLeft) {
-                    SingleButtonClick(sender, e);
-                } else {
-                    ContinueButtonClick(sender, e);
-                }
             }
         }
 
@@ -421,6 +409,15 @@ namespace CBEditor
         private void tsbRedo_Click(object sender, EventArgs e)
         {
             childForm.RichTextRedo();
+        }
+
+        private void 工具TToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            optionForm.LoadFromSetting();
+            DialogResult result = optionForm.ShowDialog();
+            if(result == DialogResult.OK) {
+                ChangeSetting();
+            }
         }
     }
 }

@@ -39,16 +39,16 @@ namespace CBEditor
             // 
             this.panel1.Controls.Add(this.btOK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 424);
+            this.panel1.Location = new System.Drawing.Point(0, 417);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 55);
+            this.panel1.Size = new System.Drawing.Size(557, 64);
             this.panel1.TabIndex = 0;
             // 
             // btOK
             // 
             this.btOK.Location = new System.Drawing.Point(239, 15);
             this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 28);
+            this.btOK.Size = new System.Drawing.Size(75, 37);
             this.btOK.TabIndex = 0;
             this.btOK.Text = "OK";
             this.btOK.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@ namespace CBEditor
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(557, 424);
+            this.textBox1.Size = new System.Drawing.Size(557, 417);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -71,7 +71,7 @@ namespace CBEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 479);
+            this.ClientSize = new System.Drawing.Size(557, 481);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "HelpForm";

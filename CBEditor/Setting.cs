@@ -18,7 +18,9 @@ namespace CBEditor
         static public int MainRightPanelWidth;
 
         // 持續性按鈕是左鍵或右鍵
-        static public bool ContinueButtonIsLeft;
+        //static public bool ContinueButtonIsLeft;    // 暫時不用了
+
+        static public int ButtonFontSize;    // 按鈕文字的大小
 
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
@@ -43,7 +45,10 @@ namespace CBEditor
             Section = "Option";
 
             // 持續性按鈕是左鍵嗎？
-            iniFile.WriteBool(Section, "CountinueButtonIsLeft", ContinueButtonIsLeft);
+            //iniFile.WriteBool(Section, "CountinueButtonIsLeft", ContinueButtonIsLeft);
+
+            // 按鈕文字的大小
+            iniFile.WriteInteger(Section, "ButtonFontSize", ButtonFontSize);
 
             // 前/背景色
             iniFile.WriteInteger(Section, "ForeColor", ForeColor.ToArgb());
@@ -87,7 +92,10 @@ namespace CBEditor
             Section = "Option";
 
             // 持續性按鈕是左鍵嗎？
-            ContinueButtonIsLeft = iniFile.ReadBool(Section, "CountinueButtonIsLeft", true);
+            //ContinueButtonIsLeft = iniFile.ReadBool(Section, "CountinueButtonIsLeft", true);
+
+            // 按鈕文字的大小
+            ButtonFontSize = iniFile.ReadInteger(Section, "ButtonFontSize", 10);
 
             // 前/背景色
             int iColor = iniFile.ReadInteger(Section, "ForeColor", Color.Black.ToArgb());

@@ -402,6 +402,7 @@ namespace CBEditor
             this.選項OToolStripMenuItem});
             this.工具TToolStripMenuItem.Name = "工具TToolStripMenuItem";
             resources.ApplyResources(this.工具TToolStripMenuItem, "工具TToolStripMenuItem");
+            this.工具TToolStripMenuItem.Click += new System.EventHandler(this.工具TToolStripMenuItem_Click);
             // 
             // 自訂CToolStripMenuItem
             // 

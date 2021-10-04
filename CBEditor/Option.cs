@@ -21,8 +21,11 @@ namespace CBEditor
         public void LoadFromSetting()
         {
             // 持續性按鈕是左鍵嗎？
-            rbMouseLeft.Checked = Setting.ContinueButtonIsLeft;
+            //rbMouseLeft.Checked = Setting.ContinueButtonIsLeft;
             rbMouseRight.Checked = !rbMouseLeft.Checked;
+
+            // 按鈕文字的大小
+            tbButtonFontSize.Value = Setting.ButtonFontSize;
 
             btSetForeColor.BackColor = Setting.ForeColor;
             btSetBackColor.BackColor = Setting.BackColor;
@@ -42,7 +45,10 @@ namespace CBEditor
         void SaveToSetting()
         {
             // 持續性按鈕是左鍵嗎？
-            Setting.ContinueButtonIsLeft = rbMouseLeft.Checked;
+            //Setting.ContinueButtonIsLeft = rbMouseLeft.Checked;
+
+            // 按鈕文字的大小
+            Setting.ButtonFontSize = (int) tbButtonFontSize.Value;
 
             Setting.ForeColor = btSetForeColor.BackColor;
             Setting.BackColor = btSetBackColor.BackColor;
