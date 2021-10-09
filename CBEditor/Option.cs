@@ -27,6 +27,12 @@ namespace CBEditor
             // 按鈕文字的大小
             tbButtonFontSize.Value = Setting.ButtonFontSize;
 
+            // 游標保持在倒數第三行
+            cbCursorKeepLast3Line.Checked = Setting.CursorKeepLast3Line;
+
+            // 自動備份
+            cbAutoBackup.Checked = Setting.AutoBackup;
+
             btSetForeColor.BackColor = Setting.ForeColor;
             btSetBackColor.BackColor = Setting.BackColor;
             fontDialog.Font = Setting.Font;
@@ -49,6 +55,12 @@ namespace CBEditor
 
             // 按鈕文字的大小
             Setting.ButtonFontSize = (int) tbButtonFontSize.Value;
+
+            // 游標保持在倒數第三行
+            Setting.CursorKeepLast3Line = cbCursorKeepLast3Line.Checked;
+
+            // 自動備份
+            Setting.AutoBackup = cbAutoBackup.Checked;
 
             Setting.ForeColor = btSetForeColor.BackColor;
             Setting.BackColor = btSetBackColor.BackColor;

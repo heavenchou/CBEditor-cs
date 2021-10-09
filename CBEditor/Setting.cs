@@ -21,6 +21,8 @@ namespace CBEditor
         //static public bool ContinueButtonIsLeft;    // 暫時不用了
 
         static public int ButtonFontSize;    // 按鈕文字的大小
+        static public bool CursorKeepLast3Line; // 游標保持在倒數第三行
+        static public bool AutoBackup;          // 自動備份
 
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
@@ -49,6 +51,13 @@ namespace CBEditor
 
             // 按鈕文字的大小
             iniFile.WriteInteger(Section, "ButtonFontSize", ButtonFontSize);
+
+            // 游標保持在倒數第三行
+            iniFile.WriteBool(Section, "CursorKeepLast3Line", CursorKeepLast3Line);
+
+            // 自動備份
+            iniFile.WriteBool(Section, "AutoBackup", AutoBackup);
+
 
             // 前/背景色
             iniFile.WriteInteger(Section, "ForeColor", ForeColor.ToArgb());
@@ -96,6 +105,13 @@ namespace CBEditor
 
             // 按鈕文字的大小
             ButtonFontSize = iniFile.ReadInteger(Section, "ButtonFontSize", 10);
+
+
+            // 游標保持在倒數第三行
+            CursorKeepLast3Line = iniFile.ReadBool(Section, "CursorKeepLast3Line", true);
+
+            // 自動備份
+            AutoBackup = iniFile.ReadBool(Section, "AutoBackup", true);
 
             // 前/背景色
             int iColor = iniFile.ReadInteger(Section, "ForeColor", Color.Black.ToArgb());

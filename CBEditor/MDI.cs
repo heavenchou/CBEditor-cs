@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace CBEditor
 {
@@ -16,6 +17,19 @@ namespace CBEditor
         bool IsTextChanged = false;     // 文字有沒有更改過
         string FileName = "";           // 檔名
         public MainForm mainForm;
+
+        const int WM_USER = 0x400;
+        const int EM_GETSCROLLPOS = WM_USER + 221;
+        const int EM_SETSCROLLPOS = WM_USER + 222;
+
+        [DllImport("user32.dll")]
+        static extern int SendMessage(IntPtr hWnd, int msg, int wParam, ref Point lParam);
+
+        [DllImport("User32.dll")]
+        public extern static int GetScrollPos(IntPtr hWnd, int nBar);
+
+        [DllImport("User32.dll")]
+        public extern static int SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
 
         public MDIForm()
         {
@@ -236,6 +250,35 @@ namespace CBEditor
         private void 貼上ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RichText.Paste();
+        }
+
+
+
+        private void RichText_SelectionChanged(object sender, EventArgs e)
+        {
+            // 游標保持在倒數第三行
+            if(!Setting.CursorKeepLast3Line) {
+                return;
+            }
+
+            // 第一行座標
+            Point p1 = RichText.GetPositionFromCharIndex(0);
+            int index = RichText.GetFirstCharIndexFromLine(1);
+            Point p2 = RichText.GetPositionFromCharIndex(index);
+            int lineHeight = p2.Y - p1.Y;       // 行高
+            if(lineHeight < 0) return;
+
+            int currentIndex = RichText.GetFirstCharIndexOfCurrentLine();
+            Point currentPos = RichText.GetPositionFromCharIndex(currentIndex);
+
+            int buttomY = currentPos.Y + lineHeight * 3;
+            int diffY = RichText.Height - buttomY;
+
+            Point newP = new Point(0, 0);
+
+            SendMessage(RichText.Handle, EM_GETSCROLLPOS, 0, ref newP);
+            newP.Y -= diffY;
+            SendMessage(RichText.Handle, EM_SETSCROLLPOS, 0, ref newP);
         }
     }
 }

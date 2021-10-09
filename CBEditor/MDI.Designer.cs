@@ -52,6 +52,7 @@ namespace CBEditor
             this.RichText.Size = new System.Drawing.Size(591, 450);
             this.RichText.TabIndex = 0;
             this.RichText.Text = "";
+            this.RichText.SelectionChanged += new System.EventHandler(this.RichText_SelectionChanged);
             this.RichText.TextChanged += new System.EventHandler(this.RichText_TextChanged);
             this.RichText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RichText_MouseDown);
             this.RichText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RichText_MouseUp);
