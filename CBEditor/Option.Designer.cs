@@ -30,6 +30,8 @@ namespace CBEditor
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpNormal = new System.Windows.Forms.TabPage();
+            this.cbAutoBackup = new System.Windows.Forms.CheckBox();
+            this.cbCursorKeepLast3Line = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbButtonFontSize = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -73,8 +75,9 @@ namespace CBEditor
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbCursorKeepLast3Line = new System.Windows.Forms.CheckBox();
-            this.cbAutoBackup = new System.Windows.Forms.CheckBox();
+            this.tbBackupTime = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbButtonFontSize)).BeginInit();
@@ -85,6 +88,7 @@ namespace CBEditor
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -100,6 +104,9 @@ namespace CBEditor
             // 
             // tpNormal
             // 
+            this.tpNormal.Controls.Add(this.label13);
+            this.tpNormal.Controls.Add(this.label11);
+            this.tpNormal.Controls.Add(this.tbBackupTime);
             this.tpNormal.Controls.Add(this.cbAutoBackup);
             this.tpNormal.Controls.Add(this.cbCursorKeepLast3Line);
             this.tpNormal.Controls.Add(this.label10);
@@ -118,10 +125,33 @@ namespace CBEditor
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
             // 
+            // cbAutoBackup
+            // 
+            this.cbAutoBackup.AutoSize = true;
+            this.cbAutoBackup.Checked = true;
+            this.cbAutoBackup.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAutoBackup.Location = new System.Drawing.Point(310, 210);
+            this.cbAutoBackup.Name = "cbAutoBackup";
+            this.cbAutoBackup.Size = new System.Drawing.Size(18, 17);
+            this.cbAutoBackup.TabIndex = 10;
+            this.cbAutoBackup.UseVisualStyleBackColor = true;
+            // 
+            // cbCursorKeepLast3Line
+            // 
+            this.cbCursorKeepLast3Line.AutoSize = true;
+            this.cbCursorKeepLast3Line.Checked = true;
+            this.cbCursorKeepLast3Line.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbCursorKeepLast3Line.Location = new System.Drawing.Point(310, 164);
+            this.cbCursorKeepLast3Line.Name = "cbCursorKeepLast3Line";
+            this.cbCursorKeepLast3Line.Size = new System.Drawing.Size(234, 29);
+            this.cbCursorKeepLast3Line.TabIndex = 9;
+            this.cbCursorKeepLast3Line.Text = "游標保持在最後第三行";
+            this.cbCursorKeepLast3Line.UseVisualStyleBackColor = true;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(323, 46);
+            this.label10.Location = new System.Drawing.Point(305, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(172, 25);
             this.label10.TabIndex = 8;
@@ -129,7 +159,7 @@ namespace CBEditor
             // 
             // tbButtonFontSize
             // 
-            this.tbButtonFontSize.Location = new System.Drawing.Point(328, 91);
+            this.tbButtonFontSize.Location = new System.Drawing.Point(310, 91);
             this.tbButtonFontSize.Maximum = new decimal(new int[] {
             30,
             0,
@@ -546,29 +576,45 @@ namespace CBEditor
             this.panel3.Size = new System.Drawing.Size(598, 59);
             this.panel3.TabIndex = 3;
             // 
-            // cbCursorKeepLast3Line
+            // tbBackupTime
             // 
-            this.cbCursorKeepLast3Line.AutoSize = true;
-            this.cbCursorKeepLast3Line.Checked = true;
-            this.cbCursorKeepLast3Line.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCursorKeepLast3Line.Location = new System.Drawing.Point(328, 164);
-            this.cbCursorKeepLast3Line.Name = "cbCursorKeepLast3Line";
-            this.cbCursorKeepLast3Line.Size = new System.Drawing.Size(234, 29);
-            this.cbCursorKeepLast3Line.TabIndex = 9;
-            this.cbCursorKeepLast3Line.Text = "游標保持在最後第三行";
-            this.cbCursorKeepLast3Line.UseVisualStyleBackColor = true;
+            this.tbBackupTime.Location = new System.Drawing.Point(371, 208);
+            this.tbBackupTime.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.tbBackupTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbBackupTime.Name = "tbBackupTime";
+            this.tbBackupTime.Size = new System.Drawing.Size(56, 34);
+            this.tbBackupTime.TabIndex = 11;
+            this.tbBackupTime.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
-            // cbAutoBackup
+            // label11
             // 
-            this.cbAutoBackup.AutoSize = true;
-            this.cbAutoBackup.Checked = true;
-            this.cbAutoBackup.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAutoBackup.Location = new System.Drawing.Point(328, 210);
-            this.cbAutoBackup.Name = "cbAutoBackup";
-            this.cbAutoBackup.Size = new System.Drawing.Size(194, 29);
-            this.cbAutoBackup.TabIndex = 10;
-            this.cbAutoBackup.Text = "每五分鐘自動備份";
-            this.cbAutoBackup.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(433, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(132, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "分鐘自動備份";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(333, 210);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 25);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "每";
             // 
             // OptionForm
             // 
@@ -595,6 +641,7 @@ namespace CBEditor
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -648,5 +695,8 @@ namespace CBEditor
         private System.Windows.Forms.NumericUpDown tbButtonFontSize;
         private System.Windows.Forms.CheckBox cbAutoBackup;
         private System.Windows.Forms.CheckBox cbCursorKeepLast3Line;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown tbBackupTime;
     }
 }

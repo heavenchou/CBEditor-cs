@@ -33,6 +33,9 @@ namespace CBEditor
             // 自動備份
             cbAutoBackup.Checked = Setting.AutoBackup;
 
+            // 備份時間
+            tbBackupTime.Value = Setting.BackupTime;
+
             btSetForeColor.BackColor = Setting.ForeColor;
             btSetBackColor.BackColor = Setting.BackColor;
             fontDialog.Font = Setting.Font;
@@ -61,6 +64,9 @@ namespace CBEditor
 
             // 自動備份
             Setting.AutoBackup = cbAutoBackup.Checked;
+            // 備份時間
+            Setting.BackupTime = (int) tbBackupTime.Value;
+
 
             Setting.ForeColor = btSetForeColor.BackColor;
             Setting.BackColor = btSetBackColor.BackColor;

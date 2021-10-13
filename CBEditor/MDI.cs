@@ -16,6 +16,7 @@ namespace CBEditor
     {
         bool IsTextChanged = false;     // 文字有沒有更改過
         string FileName = "";           // 檔名
+        string BackupFileName = "";     // 備份檔名
         public MainForm mainForm;
 
         const int WM_USER = 0x400;
@@ -66,6 +67,7 @@ namespace CBEditor
                 DialogResult result = MessageBox.Show("是否儲存檔案？", "CBEditor", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if(result == DialogResult.No) {
                     // 不存檔
+                    RemoveBackupFile();
                 } else if(result == DialogResult.Cancel) {
                     // 不關閉
                     return false;
@@ -99,6 +101,8 @@ namespace CBEditor
         public bool SaveAsFile()
         {
             if(saveFileDialog.ShowDialog() == DialogResult.OK) {
+                // 若有舊的備份也要刪掉
+                RemoveBackupFile();
                 FileName = saveFileDialog.FileName;
                 SaveFileUtf8(FileName);
             } else {
@@ -114,7 +118,9 @@ namespace CBEditor
             sw.Close();
             IsTextChanged = false;
             ChangeTitle();
+            RemoveBackupFile();
         }
+
         void OpenFileUtf8(string filename)
         {
             StreamReader sr = new StreamReader(filename, Encoding.UTF8);
@@ -130,11 +136,30 @@ namespace CBEditor
             if(FileClose()) {
                 DialogResult resutlt = openFileDialog.ShowDialog();
                 if(resutlt == DialogResult.OK) {
+                    timerBackup.Enabled = false;
                     FileName = openFileDialog.FileName;
                     OpenFileUtf8(FileName);
+                    if(FindBackupFile()) {
+                        // 發現有備份的檔案
+                        MessageBox.Show("發現此檔案有備份檔 " + BackupFileName + "。如果備份檔較新，可將備份檔案取代本檔。按下確定後會自動關閉本程式。");
+                        mainForm.Close();
+                    }
+                    if(Setting.AutoBackup) {
+                        timerBackup.Enabled = true;
+                    }
                 }
             }
         }
+
+        public bool FindBackupFile()
+        {
+            SetBackupFileName();
+            if(File.Exists(BackupFileName)) {
+                return true;
+            }
+            return false;
+        }
+
         public void OpenNewFile()
         {
             if(FileClose()) {
@@ -144,6 +169,7 @@ namespace CBEditor
                 ChangeTitle();
             }
         }
+
 
         public void ChangeTitle()
         {
@@ -166,6 +192,7 @@ namespace CBEditor
             RichText.ForeColor = Setting.ForeColor;
             RichText.BackColor = Setting.BackColor;
             RichText.Font = Setting.Font;
+            timerBackup.Interval = Setting.BackupTime * 60000;
         }
 
         private void RichText_MouseDown(object sender, MouseEventArgs e)
@@ -210,12 +237,10 @@ namespace CBEditor
             }
         }
 
-
         public void RichTextCut()
         {
             RichText.Cut();
         }
-
 
         public void RichTextCopy()
         {
@@ -252,8 +277,6 @@ namespace CBEditor
             RichText.Paste();
         }
 
-
-
         private void RichText_SelectionChanged(object sender, EventArgs e)
         {
             // 游標保持在倒數第三行
@@ -279,6 +302,37 @@ namespace CBEditor
             SendMessage(RichText.Handle, EM_GETSCROLLPOS, 0, ref newP);
             newP.Y -= diffY;
             SendMessage(RichText.Handle, EM_SETSCROLLPOS, 0, ref newP);
+        }
+
+        // 自動備份
+        private void timerBackup_Tick(object sender, EventArgs e)
+        {
+            if(Setting.AutoBackup == false || IsTextChanged == false) {
+                return;
+            }
+            SetBackupFileName();
+            if(BackupFileName == "") {
+                return;
+            }
+
+            StreamWriter sw = new StreamWriter(BackupFileName, false, Encoding.UTF8);
+            sw.Write(RichText.Text);
+            sw.Close();
+        }
+
+        void SetBackupFileName()
+        {
+            if(FileName != "") {
+                BackupFileName = FileName + ".~cbe_backup";
+            }
+        }
+
+        void RemoveBackupFile()
+        {
+            SetBackupFileName();
+            if(BackupFileName != "") {
+                File.Delete(BackupFileName);
+            }
         }
     }
 }

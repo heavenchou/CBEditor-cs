@@ -23,6 +23,7 @@ namespace CBEditor
         static public int ButtonFontSize;    // 按鈕文字的大小
         static public bool CursorKeepLast3Line; // 游標保持在倒數第三行
         static public bool AutoBackup;          // 自動備份
+        static public int BackupTime;           // 自動備份時間
 
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
@@ -57,6 +58,8 @@ namespace CBEditor
 
             // 自動備份
             iniFile.WriteBool(Section, "AutoBackup", AutoBackup);
+            // 備份時間
+            iniFile.WriteInteger(Section, "BackupTime", BackupTime);
 
 
             // 前/背景色
@@ -112,6 +115,8 @@ namespace CBEditor
 
             // 自動備份
             AutoBackup = iniFile.ReadBool(Section, "AutoBackup", true);
+            // 備份時間
+            BackupTime = iniFile.ReadInteger(Section, "BackupTime", 5);
 
             // 前/背景色
             int iColor = iniFile.ReadInteger(Section, "ForeColor", Color.Black.ToArgb());

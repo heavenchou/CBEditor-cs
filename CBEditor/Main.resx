@@ -136,7 +136,7 @@
     <value>Magenta</value>
   </data>
   <data name="新增NToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 24</value>
+    <value>29, 28</value>
   </data>
   <data name="新增NToolStripButton.Text" xml:space="preserve">
     <value>新增(&amp;N)</value>
@@ -310,15 +310,15 @@
   <data name="tsbUndo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHuSURBVDhPnZL/btJQFMd5BOMLzIizgkMMk7EBK8VkIfoP
-        jWZrcFskbI4sMilNN/lhHNH/TAyPwiM0RhlBaupi2cVBW5Pp3zzC17bcPyA6E/wkJ+k995zPvT2tx7+j
-        X/X8hbl0O+sXOs3AdkdZyHSU+fWWMpdWRDuu0JIxvqeaOpn0PmrxiztdK109B//awNrRAAnpHHFxiHC+
-        D0Zoj7xphafljuArQlttzZHYm42UpEN4a4ItEUSLBJw8xKpkIlYyEBUHiNvPwawGu34scQT59wb8tjld
-        IeCPh1gq6HhQNbH6guD2ZtfyZVSF2VK1xT0drPzDDecm7s0dwcabAXLvLDyuG4gUenhYMxHeOx3d2DgR
-        3VMoXuEj59vsjJLlCywX+phf/5B1BVzpDPdlguWDHlJVA/eendqbn+7SviluZlp8eL+HZOUCzJOT5lgg
-        nSH8/BtW7HdOVSx4Mx3rj2lPwNgz46q/cMv+Oq5g7ciecqmPaOk7looGQvtDXBfGg6U9UzDb7Xqy9hML
-        OVVzBZeFI6E9U/hyKs+WTQR2vyg0NRvBfJdjywbu7H5u0tRshA40kT0cIJBXszQ1GxFJb0RkMgoWtUsH
-        /U8iL4m2ctir0+VsJI7JtVitbyX+9/T4K9KI1QhHl7MTlfWJP9Tj+Q0l2hFhvSPHkgAAAABJRU5ErkJg
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHuSURBVDhPnZL/btJQFMd5BOMLzMhmxxximIwNWCkmC9F/
+        aDQbQbdI2BxZZEJJN/lhHNH/TAyPwiM0RlmD1NTFsuKgrcn0bx7h6225f0B0Jt0nOUnvued87u1pPQs7
+        2nXPP5hJydmFdKfl3+5Ii5mONLfRlmZSUonENVoyxvdMVSaT3kdtfmmna6Vq5+DfGFg/GiBePkesNEQo
+        3weTlkfelMTTclvwDcEtWbUlZLOZLGtIvzPBCjoiRR2cOMRa2URUMBApDRAjz4GsClI/ltiC/AcD88Sc
+        qurgj4dYLmh4UDOx9lLH7addy5dRJGZLUZf2NLDiTyfsmzg3twWbbwfIvbfwuGEgXOjhYd1EaO90NLt5
+        UnJOoXjTnzgmI48SlQusFPqY2/iYdQSccIb7oo6Vgx6SNQP3np+Szc93ad8UtzJtPrTfQ6J6AebJSWss
+        KJ8h9OI7Vsk7J6sWvJmO9de0J2DIzLjab8yTr+MI1o/IlIU+IsIPLBcNBPeHuJkeD5b2TMFsy41E/RcW
+        c4rqCC4LW0J7pvDlFJ6tmPDvfpVoyh2BfJdjKwbu7H5p0ZQ7ggdqiT0cwJ9XsjTljnBZa4ZFfRQoqpcO
+        +r+EX+nq6mGvQZfuiB/rN6L1vhW/6umx13ozWtc5unRPRNQm/lCP5w8ONhFZBjCnsQAAAABJRU5ErkJg
         gg==
 </value>
   </data>
@@ -337,16 +337,16 @@
   <data name="tsbRedo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIFSURBVDhPnZJ/a1JRHMbvO9iFAsH9YSglJrK7cqmZ21pz
-        zlQ05lInW7YRtFjj9mM2N8rFiqAf7KUIRcxSO84FYw12G4Fjc1ev1v/3JTx53amUqGYfOHDul+c8PM89
-        h2lG40+xWs8b3jSaJd3hHOFG80R/JZfS+t7FqKSFLj9h6ZZhdN63Aev1ghxJFhFMljAU34Mzvo/hByX0
-        znyBMbxeOeUnASpnuq4R1hDbQeNDM/Q64OU/YeJZGe75PXgXD+BOiLh4rwTzrSJ6ZnZh50VwsW0YQoUV
-        5XB3bENoGCixLZG8PPm8jOhTEc7ZbZhCa4IhmCe6kULl7NQOLLMHMN/eheN+GZbpIozRDdk5L6FhcNK3
-        Ght/XMTUyyrOjX2UNZ7V/kYsSqcny+sjW7DVE5yf28fAQhWDiRp8y98ODbjg+9SNVxLcvACdN/2zYzMa
-        P+GMEwIccQmOBRGDySqGl2uHBj3ja2TyRRVcKC9Q/W/UDVhdeLNiuyvBPCfCHBdh/VHhTHS9MvakDP1I
-        ZonqW1AOa0NbgvWOBHviK2yLVdgf1tD7iFZQEnjiRRiu/rqiZhTR3xZjCuZSF25+xrFLrT/vyCiv7HR4
-        E8cH0jwdtUdHX4pVuwuyypVZoaP2UTkzSypX9o+38E86+gircqXrKcgJOmqfeoV+tfvD/9dQUF8mHN0e
-        EYb5DoiyDBgjy7R7AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIGSURBVDhPnZL/SxNhHMfvP/CgYGE/LDZqLBmeNZtrTc2c
+        c21jC2fbEu1SghST64uXU2qGRdAX/FMOipi1rWfOQEzwkmCi87bd6vf9Ce9286k2onK94OB5PryfN+/3
+        8xxTjz4gsQbvG8EynCIdkTThhjPEdCUtGfzveCppoD1AWLpkGKPvbdB2I1uJxnMIxfMYEHfhEvcw+CCP
+        7ukvaIusFU8FSJDKmfbrhDXz26ht9AOvgz7hE8aeFeCZ24VvYR+emIKL9/KwTuXQOb0Dh6CA47dgDmeX
+        tcMd/LpcM9Bi28KZyvjzAkaeKnDNbMESXpXNoQwxDmWLZye2YZvZh/X2Dpz3C7BN5mCOrldccyXUDE76
+        E/zo4xwmXqo4F/lY0XsTvbVYlOPelGCKbsJeTXB+dg998yr6Y2X4l74dGHCh99LNVyV4BBlG38rPjvXo
+        A4RrG5PhFEtwzivoj6sYXCofGHSOrpLxFyq4cEam+t+oGrDGyEbRfrcE66wCq6ig60eFMyNrxWtPCjAN
+        JRepvgHtsCG8KXfdKcER+wr7ggrHwzK6H9EKWgKvWL2Yq7+eqB5N9LePsYTS0oVbn3HkUuPlHRrtLzsd
+        2cDRvhWBjpqjpUdij7mzFZ07uUxHzaNzJRd17tQfX+GftPQQVudOVFOQE3TUPNUKva2eD/9fQ6P1MuHo
+        8pAwzHdmUgwKMFKW3gAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="tsbRedo.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -440,10 +440,10 @@
     <value>說明(&amp;L)</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 27</value>
+    <value>0, 30</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 27</value>
+    <value>1018, 31</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -466,6 +466,54 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>146, 17</value>
   </metadata>
+  <data name="檔案FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 24</value>
+  </data>
+  <data name="檔案FToolStripMenuItem.Text" xml:space="preserve">
+    <value>檔案(&amp;F)</value>
+  </data>
+  <data name="編輯EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 24</value>
+  </data>
+  <data name="編輯EToolStripMenuItem.Text" xml:space="preserve">
+    <value>編輯(&amp;E)</value>
+  </data>
+  <data name="工具TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 24</value>
+  </data>
+  <data name="工具TToolStripMenuItem.Text" xml:space="preserve">
+    <value>選項(&amp;O)</value>
+  </data>
+  <data name="說明HToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 24</value>
+  </data>
+  <data name="說明HToolStripMenuItem.Text" xml:space="preserve">
+    <value>說明(&amp;H)</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1018, 30</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="新增NToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -625,12 +673,6 @@
   <data name="結束XToolStripMenuItem.Text" xml:space="preserve">
     <value>結束(&amp;X)</value>
   </data>
-  <data name="檔案FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 23</value>
-  </data>
-  <data name="檔案FToolStripMenuItem.Text" xml:space="preserve">
-    <value>檔案(&amp;F)</value>
-  </data>
   <data name="搜尋ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F</value>
   </data>
@@ -755,14 +797,8 @@
   <data name="全選AToolStripMenuItem.Text" xml:space="preserve">
     <value>全選(&amp;A)</value>
   </data>
-  <data name="編輯EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 23</value>
-  </data>
-  <data name="編輯EToolStripMenuItem.Text" xml:space="preserve">
-    <value>編輯(&amp;E)</value>
-  </data>
   <data name="自訂CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="自訂CToolStripMenuItem.Text" xml:space="preserve">
     <value>自訂(&amp;C)</value>
@@ -771,19 +807,13 @@
     <value>False</value>
   </data>
   <data name="選項OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="選項OToolStripMenuItem.Text" xml:space="preserve">
     <value>選項(&amp;O)</value>
   </data>
   <data name="選項OToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="工具TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="工具TToolStripMenuItem.Text" xml:space="preserve">
-    <value>選項(&amp;O)</value>
   </data>
   <data name="內容CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 26</value>
@@ -827,36 +857,6 @@
   <data name="關於AToolStripMenuItem.Text" xml:space="preserve">
     <value>關於(&amp;A)...</value>
   </data>
-  <data name="說明HToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 23</value>
-  </data>
-  <data name="說明HToolStripMenuItem.Text" xml:space="preserve">
-    <value>說明(&amp;H)</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 27</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="panelLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
@@ -885,10 +885,10 @@
     <value>Right</value>
   </data>
   <data name="panelRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>893, 54</value>
+    <value>893, 61</value>
   </data>
   <data name="panelRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 386</value>
+    <value>125, 379</value>
   </data>
   <data name="panelRight.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -933,10 +933,10 @@
     <value>Right</value>
   </data>
   <data name="splitter2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>890, 54</value>
+    <value>890, 61</value>
   </data>
   <data name="splitter2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 386</value>
+    <value>3, 379</value>
   </data>
   <data name="splitter2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -956,9 +956,6 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>287, 17</value>
   </metadata>
-  <data name="lbContinueSignText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 18</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 416</value>
   </data>
@@ -985,6 +982,9 @@
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="lbContinueSignText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 18</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

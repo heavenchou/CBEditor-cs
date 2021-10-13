@@ -155,16 +155,6 @@ namespace CBEditor
             Width -= 1;
         }
 
-        private void 選項OToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            optionForm.LoadFromSetting();
-            DialogResult result = optionForm.ShowDialog();
-            if(result == DialogResult.OK) {
-                ChangeSetting();
-            }
-
-        }
-
         // 更新設定內容
         public void ChangeSetting()
         {

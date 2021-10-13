@@ -413,7 +413,6 @@ namespace CBEditor
             // 
             this.選項OToolStripMenuItem.Name = "選項OToolStripMenuItem";
             resources.ApplyResources(this.選項OToolStripMenuItem, "選項OToolStripMenuItem");
-            this.選項OToolStripMenuItem.Click += new System.EventHandler(this.選項OToolStripMenuItem_Click);
             // 
             // 說明HToolStripMenuItem
             // 

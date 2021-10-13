@@ -38,6 +38,7 @@ namespace CBEditor
             this.貼上ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.timerBackup = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,12 @@ namespace CBEditor
             // 
             this.openFileDialog.Filter = "文字檔案(*.txt)|*.txt|所有檔案 (*.*)|*.*";
             // 
+            // timerBackup
+            // 
+            this.timerBackup.Enabled = true;
+            this.timerBackup.Interval = 5000;
+            this.timerBackup.Tick += new System.EventHandler(this.timerBackup_Tick);
+            // 
             // MDIForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -141,5 +148,6 @@ namespace CBEditor
         private System.Windows.Forms.ToolStripMenuItem 剪下ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 複製ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 貼上ToolStripMenuItem;
+        private System.Windows.Forms.Timer timerBackup;
     }
 }
