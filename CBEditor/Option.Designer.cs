@@ -30,6 +30,9 @@ namespace CBEditor
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpNormal = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbBackupTime = new System.Windows.Forms.NumericUpDown();
             this.cbAutoBackup = new System.Windows.Forms.CheckBox();
             this.cbCursorKeepLast3Line = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,11 +78,10 @@ namespace CBEditor
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tbBackupTime = new System.Windows.Forms.NumericUpDown();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.cbRememberLastPos = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbButtonFontSize)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tpButton.SuspendLayout();
@@ -88,7 +90,6 @@ namespace CBEditor
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -104,6 +105,7 @@ namespace CBEditor
             // 
             // tpNormal
             // 
+            this.tpNormal.Controls.Add(this.cbRememberLastPos);
             this.tpNormal.Controls.Add(this.label13);
             this.tpNormal.Controls.Add(this.label11);
             this.tpNormal.Controls.Add(this.tbBackupTime);
@@ -124,6 +126,46 @@ namespace CBEditor
             this.tpNormal.TabIndex = 0;
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(333, 210);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 25);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "每";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(433, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(132, 25);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "分鐘自動備份";
+            // 
+            // tbBackupTime
+            // 
+            this.tbBackupTime.Location = new System.Drawing.Point(371, 208);
+            this.tbBackupTime.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.tbBackupTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbBackupTime.Name = "tbBackupTime";
+            this.tbBackupTime.Size = new System.Drawing.Size(56, 34);
+            this.tbBackupTime.TabIndex = 11;
+            this.tbBackupTime.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // cbAutoBackup
             // 
@@ -576,45 +618,17 @@ namespace CBEditor
             this.panel3.Size = new System.Drawing.Size(598, 59);
             this.panel3.TabIndex = 3;
             // 
-            // tbBackupTime
+            // cbRememberLastPos
             // 
-            this.tbBackupTime.Location = new System.Drawing.Point(371, 208);
-            this.tbBackupTime.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.tbBackupTime.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.tbBackupTime.Name = "tbBackupTime";
-            this.tbBackupTime.Size = new System.Drawing.Size(56, 34);
-            this.tbBackupTime.TabIndex = 11;
-            this.tbBackupTime.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(433, 210);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 25);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "分鐘自動備份";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(333, 210);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 25);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "每";
+            this.cbRememberLastPos.AutoSize = true;
+            this.cbRememberLastPos.Checked = true;
+            this.cbRememberLastPos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbRememberLastPos.Location = new System.Drawing.Point(310, 258);
+            this.cbRememberLastPos.Name = "cbRememberLastPos";
+            this.cbRememberLastPos.Size = new System.Drawing.Size(234, 29);
+            this.cbRememberLastPos.TabIndex = 15;
+            this.cbRememberLastPos.Text = "記憶檔案最後開啟位置";
+            this.cbRememberLastPos.UseVisualStyleBackColor = true;
             // 
             // OptionForm
             // 
@@ -630,6 +644,7 @@ namespace CBEditor
             this.tabControl.ResumeLayout(false);
             this.tpNormal.ResumeLayout(false);
             this.tpNormal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbButtonFontSize)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -641,7 +656,6 @@ namespace CBEditor
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -698,5 +712,6 @@ namespace CBEditor
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown tbBackupTime;
+        private System.Windows.Forms.CheckBox cbRememberLastPos;
     }
 }

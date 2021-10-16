@@ -68,6 +68,7 @@ namespace CBEditor
                 if(result == DialogResult.No) {
                     // 不存檔
                     RemoveBackupFile();
+                    SetFileLastPos(FileName, -1);
                 } else if(result == DialogResult.Cancel) {
                     // 不關閉
                     return false;
@@ -76,10 +77,39 @@ namespace CBEditor
                     if(!SaveFile()) {
                         return false;
                     }
+                    SetFileLastPos(FileName, RichText.SelectionStart);
                 }
+            } else {
+                SetFileLastPos(FileName, RichText.SelectionStart);
             }
+
             return true;
         }
+
+
+        public void SetFileLastPos(string sFile, int iPos)
+        {
+            if(sFile == "") {
+                return;
+            }
+
+            int index = Setting.OpenFileName.FindIndex(x => x == sFile);
+            if(index != -1) {
+                if(iPos == -1) {
+                    iPos = Setting.OpenFilePos[index];
+                }
+                Setting.OpenFileName.RemoveAt(index);
+                Setting.OpenFilePos.RemoveAt(index);
+            } else {
+                if(iPos == -1) {
+                    iPos = 0;
+                }
+            }
+
+            Setting.OpenFileName.Insert(0, sFile);
+            Setting.OpenFilePos.Insert(0, iPos);
+        }
+
 
         public bool SaveFile()
         {
@@ -98,6 +128,7 @@ namespace CBEditor
             }
             return true;
         }
+
         public bool SaveAsFile()
         {
             if(saveFileDialog.ShowDialog() == DialogResult.OK) {
@@ -147,8 +178,24 @@ namespace CBEditor
                     if(Setting.AutoBackup) {
                         timerBackup.Enabled = true;
                     }
+                    // 檢查是否有記錄最後結束位置
+                    if(Setting.RememberLastPos) {
+                        int iPos = GetFileLastPos(FileName);    // 取得檔案最後位置
+                        RichText.SelectionStart = iPos;
+                    }
                 }
             }
+        }
+
+        // 取得檔案最後位置
+        public int GetFileLastPos(string file)
+        {
+            int index = Setting.OpenFileName.FindIndex(x => x == file);
+            if(index != -1) {
+                int iPos = Setting.OpenFilePos[index];
+                return iPos;
+            }
+            return 0;
         }
 
         public bool FindBackupFile()
@@ -170,7 +217,6 @@ namespace CBEditor
             }
         }
 
-
         public void ChangeTitle()
         {
             string title = "";
@@ -191,7 +237,9 @@ namespace CBEditor
         {
             RichText.ForeColor = Setting.ForeColor;
             RichText.BackColor = Setting.BackColor;
-            RichText.Font = Setting.Font;
+            if(RichText.Font != Setting.Font) {
+                RichText.Font = Setting.Font;
+            }
             timerBackup.Interval = Setting.BackupTime * 60000;
         }
 

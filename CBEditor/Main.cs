@@ -31,7 +31,9 @@ namespace CBEditor
             InitializeComponent();
             NewRichText();
             optionForm.mainForm = this;
+            Setting.FirstLoad();        // 讀取設定
             Setting.LoadFromFile();     // 讀取設定
+            ChangeWindows();
             ChangeSetting();            // 變更設定
         }
 
@@ -47,7 +49,7 @@ namespace CBEditor
             Setting.MainLeftPanelWidth = panelLeft.Height;
             Setting.MainRightPanelWidth = panelRight.Width;
 
-            Setting.SaveToFile();
+            Setting.LastSave();
         }
 
         private void NewRichText()
@@ -157,6 +159,15 @@ namespace CBEditor
 
         // 更新設定內容
         public void ChangeSetting()
+        { 
+            LoadDownButton();         // 載入單次的按鈕
+            LoadRightButton();       // 載入連續的按鈕
+            
+            childForm.ChangeSetting();
+        }
+
+        // 變更視窗畫面
+        public void ChangeWindows()
         {
             if(Setting.MainFormLeft != -1) {
                 Left = Setting.MainFormLeft;
@@ -176,11 +187,6 @@ namespace CBEditor
             if(Setting.MainRightPanelWidth != 0) {
                 panelRight.Width = Setting.MainRightPanelWidth;
             }
-
-            LoadDownButton();         // 載入單次的按鈕
-            LoadRightButton();       // 載入連續的按鈕
-            
-            childForm.ChangeSetting();
         }
 
         // 載入單次的按鈕

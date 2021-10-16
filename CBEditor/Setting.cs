@@ -20,10 +20,11 @@ namespace CBEditor
         // 持續性按鈕是左鍵或右鍵
         //static public bool ContinueButtonIsLeft;    // 暫時不用了
 
-        static public int ButtonFontSize;    // 按鈕文字的大小
-        static public bool CursorKeepLast3Line; // 游標保持在倒數第三行
-        static public bool AutoBackup;          // 自動備份
-        static public int BackupTime;           // 自動備份時間
+        static public int ButtonFontSize = 10;          // 按鈕文字的大小
+        static public bool CursorKeepLast3Line = true;  // 游標保持在倒數第三行
+        static public bool AutoBackup = true;           // 自動備份
+        static public int BackupTime = 5;               // 自動備份時間
+        static public bool RememberLastPos = true;      // 記憶檔案最後開啟位置
 
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
@@ -31,21 +32,15 @@ namespace CBEditor
         static public List<string> SingleList = new List<string>();
         static public List<string> ContinueList = new List<string>();
 
+        static public List<string> OpenFileName = new List<string>();   // 曾經開啟過的檔名
+        static public List<int> OpenFilePos = new List<int>();          // 曾經開啟過的檔案最後編輯位置
+
         static public void SaveToFile()
         {
             string file = System.Windows.Forms.Application.StartupPath + @"\CBEditor.ini";
             IniFile iniFile = new IniFile(file);
 
-            string Section = "Main";
-
-            iniFile.WriteInteger(Section, "MainFormLeft", MainFormLeft);
-            iniFile.WriteInteger(Section, "MainFormTop", MainFormTop);
-            iniFile.WriteInteger(Section, "MainFormWidth", MainFormWidht);
-            iniFile.WriteInteger(Section, "MainFormHeight", MainFormHeight);
-            iniFile.WriteInteger(Section, "MainLeftPanelWidth", MainLeftPanelWidth);
-            iniFile.WriteInteger(Section, "MainRightPanelWidth", MainRightPanelWidth);
-
-            Section = "Option";
+            string Section = "Option";
 
             // 持續性按鈕是左鍵嗎？
             //iniFile.WriteBool(Section, "CountinueButtonIsLeft", ContinueButtonIsLeft);
@@ -60,7 +55,8 @@ namespace CBEditor
             iniFile.WriteBool(Section, "AutoBackup", AutoBackup);
             // 備份時間
             iniFile.WriteInteger(Section, "BackupTime", BackupTime);
-
+            // 記憶檔案最後開啟位置
+            iniFile.WriteBool(Section, "RememberLastPos", RememberLastPos);
 
             // 前/背景色
             iniFile.WriteInteger(Section, "ForeColor", ForeColor.ToArgb());
@@ -86,8 +82,42 @@ namespace CBEditor
                 string fieldName = "ContinueButton" + i.ToString();
                 iniFile.WriteString(Section, fieldName, ContinueList[i]);
             }
+
         }
-        static public void LoadFromFile()
+
+        static public void LastSave()
+        {
+            string file = System.Windows.Forms.Application.StartupPath + @"\CBEditor.ini";
+            IniFile iniFile = new IniFile(file);
+
+            string Section = "Main";
+
+            iniFile.WriteInteger(Section, "MainFormLeft", MainFormLeft);
+            iniFile.WriteInteger(Section, "MainFormTop", MainFormTop);
+            iniFile.WriteInteger(Section, "MainFormWidth", MainFormWidht);
+            iniFile.WriteInteger(Section, "MainFormHeight", MainFormHeight);
+            iniFile.WriteInteger(Section, "MainLeftPanelWidth", MainLeftPanelWidth);
+            iniFile.WriteInteger(Section, "MainRightPanelWidth", MainRightPanelWidth);
+
+            Section = "File";
+
+            // 開啟過的檔案及最後位置
+            int iOpenFileCount = OpenFileName.Count;
+            if(iOpenFileCount > 20) {
+                iOpenFileCount = 20;
+            }
+            iniFile.WriteInteger(Section, "OpenFileCount", iOpenFileCount);
+            for(int i = 0; i < iOpenFileCount; i++) {
+                string fieldName = "OpenFileName" + i.ToString();
+                iniFile.WriteString(Section, fieldName, OpenFileName[i]);
+            }
+            for(int i = 0; i < iOpenFileCount; i++) {
+                string fieldName = "OpenFilePos" + i.ToString();
+                iniFile.WriteInteger(Section, fieldName, OpenFilePos[i]);
+            }
+        }
+
+        static public void FirstLoad()
         {
             string file = System.Windows.Forms.Application.StartupPath + @"\CBEditor.ini";
             IniFile iniFile = new IniFile(file);
@@ -101,14 +131,36 @@ namespace CBEditor
             MainLeftPanelWidth = iniFile.ReadInteger(Section, "MainLeftPanelWidth", 0);
             MainRightPanelWidth = iniFile.ReadInteger(Section, "MainRightPanelWidth", 0);
 
-            Section = "Option";
+            Section = "File";
+
+            // 開啟過的檔案及最後位置
+            int iOpenFileCount = iniFile.ReadInteger(Section, "OpenFileCount", 0);
+            OpenFileName.Clear();
+            for(int i = 0; i < iOpenFileCount; i++) {
+                string fieldName = "OpenFileName" + i.ToString();
+                string sItem = iniFile.ReadString(Section, fieldName, "");
+                OpenFileName.Add(sItem);
+            }
+            OpenFilePos.Clear();
+            for(int i = 0; i < iOpenFileCount; i++) {
+                string fieldName = "OpenFilePos" + i.ToString();
+                int iItem = iniFile.ReadInteger(Section, fieldName, 0);
+                OpenFilePos.Add(iItem);
+            }
+        }
+
+        static public void LoadFromFile()
+        {
+            string file = System.Windows.Forms.Application.StartupPath + @"\CBEditor.ini";
+            IniFile iniFile = new IniFile(file);
+
+            string Section = "Option";
 
             // 持續性按鈕是左鍵嗎？
             //ContinueButtonIsLeft = iniFile.ReadBool(Section, "CountinueButtonIsLeft", true);
 
             // 按鈕文字的大小
             ButtonFontSize = iniFile.ReadInteger(Section, "ButtonFontSize", 10);
-
 
             // 游標保持在倒數第三行
             CursorKeepLast3Line = iniFile.ReadBool(Section, "CursorKeepLast3Line", true);
@@ -117,6 +169,8 @@ namespace CBEditor
             AutoBackup = iniFile.ReadBool(Section, "AutoBackup", true);
             // 備份時間
             BackupTime = iniFile.ReadInteger(Section, "BackupTime", 5);
+            // 記憶檔案最後開啟位置
+            RememberLastPos = iniFile.ReadBool(Section, "RememberLastPos", true);
 
             // 前/背景色
             int iColor = iniFile.ReadInteger(Section, "ForeColor", Color.Black.ToArgb());

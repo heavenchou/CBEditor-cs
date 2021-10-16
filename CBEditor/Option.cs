@@ -36,6 +36,9 @@ namespace CBEditor
             // 備份時間
             tbBackupTime.Value = Setting.BackupTime;
 
+            // 記憶檔案最後開啟位置
+            cbRememberLastPos.Checked = Setting.RememberLastPos;
+
             btSetForeColor.BackColor = Setting.ForeColor;
             btSetBackColor.BackColor = Setting.BackColor;
             fontDialog.Font = Setting.Font;
@@ -66,7 +69,8 @@ namespace CBEditor
             Setting.AutoBackup = cbAutoBackup.Checked;
             // 備份時間
             Setting.BackupTime = (int) tbBackupTime.Value;
-
+            // 記憶檔案最後開啟位置
+            Setting.RememberLastPos = cbRememberLastPos.Checked;
 
             Setting.ForeColor = btSetForeColor.BackColor;
             Setting.BackColor = btSetBackColor.BackColor;
@@ -91,6 +95,7 @@ namespace CBEditor
             SaveToSetting();
             Close();
         }
+
         private void btSetFont_Click(object sender, EventArgs e)
         {
             fontDialog.ShowDialog();
