@@ -256,11 +256,12 @@ namespace CBEditor
 
             // 如果有按下 alt , 則是用取代模式, 所選的文字都被取代.
             // 如果沒有選, 則是第一個字被取代
+            // ps. 後來改成若有選擇文字, 沒有文字被取代
             if(((ModifierKeys & Keys.Alt) == Keys.Alt) || (sStart == "del" && sEnd == "")) {
                 if(childForm.RichText.SelectionLength == 0) {
                     childForm.RichText.SelectionLength = 1;
+                    childForm.RichText.SelectedText = "";
                 }
-                childForm.RichText.SelectedText = "";
             }
 
             if(sStart == "del" && sEnd == "") {

@@ -273,8 +273,8 @@ namespace CBEditor
                 if(((ModifierKeys & Keys.Alt) == Keys.Alt) || (sStart == "del" && sEnd == "")) {
                     if(RichText.SelectionLength == 0) {
                         RichText.SelectionLength = 1;
+                        RichText.SelectedText = "";
                     }
-                    RichText.SelectedText = "";
                 }
 
                 if(sStart == "del" && sEnd == "") {
@@ -348,8 +348,10 @@ namespace CBEditor
             Point newP = new Point(0, 0);
 
             SendMessage(RichText.Handle, EM_GETSCROLLPOS, 0, ref newP);
-            newP.Y -= diffY;
-            SendMessage(RichText.Handle, EM_SETSCROLLPOS, 0, ref newP);
+            if(diffY < 0) {
+                newP.Y -= diffY;
+                SendMessage(RichText.Handle, EM_SETSCROLLPOS, 0, ref newP);
+            }
         }
 
         // 自動備份
