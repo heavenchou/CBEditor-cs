@@ -14,8 +14,9 @@ namespace CBEditor
         static public int MainFormTop;
         static public int MainFormWidht;
         static public int MainFormHeight;
-        static public int MainLeftPanelWidth;
+        static public int MainDownPanelHeight;
         static public int MainRightPanelWidth;
+        static public int MainLeftPanelWidth;
 
         // 持續性按鈕是左鍵或右鍵
         //static public bool ContinueButtonIsLeft;    // 暫時不用了
@@ -29,8 +30,9 @@ namespace CBEditor
         static public Font Font = new Font("", 10);
         static public Color BackColor = Color.White;
         static public Color ForeColor = Color.Black;
-        static public List<string> SingleList = new List<string>();
-        static public List<string> ContinueList = new List<string>();
+        static public List<string> LeftList = new List<string>();
+        static public List<string> RightList = new List<string>();
+        static public List<string> DownList = new List<string>();
 
         static public List<string> OpenFileName = new List<string>();   // 曾經開啟過的檔名
         static public List<int> OpenFilePos = new List<int>();          // 曾經開啟過的檔案最後編輯位置
@@ -70,19 +72,24 @@ namespace CBEditor
             iniFile.WriteBool(Section, "FontUnderline", Font.Underline);
             iniFile.WriteBool(Section, "FontStrikeout", Font.Strikeout);
 
-            // 單次按鈕
-            iniFile.WriteInteger(Section, "SingleButtonCount", SingleList.Count);
-            for(int i = 0; i < SingleList.Count; i++) {
+            // 左方（連續）按鈕
+            iniFile.WriteInteger(Section, "LeftButtonCount", LeftList.Count);
+            for (int i = 0; i < LeftList.Count; i++) {
+                string fieldName = "LeftButton" + i.ToString();
+                iniFile.WriteString(Section, fieldName, LeftList[i]);
+            }
+            // 下方（單次）按鈕
+            iniFile.WriteInteger(Section, "SingleButtonCount", DownList.Count);
+            for(int i = 0; i < DownList.Count; i++) {
                 string fieldName = "SingleButton" + i.ToString();
-                iniFile.WriteString(Section, fieldName, SingleList[i]);
+                iniFile.WriteString(Section, fieldName, DownList[i]);
             }
-            // 連續按鈕
-            iniFile.WriteInteger(Section, "ContinueButtonCount", ContinueList.Count);
-            for(int i = 0; i < ContinueList.Count; i++) {
+            // 右方（連續）按鈕
+            iniFile.WriteInteger(Section, "ContinueButtonCount", RightList.Count);
+            for(int i = 0; i < RightList.Count; i++) {
                 string fieldName = "ContinueButton" + i.ToString();
-                iniFile.WriteString(Section, fieldName, ContinueList[i]);
+                iniFile.WriteString(Section, fieldName, RightList[i]);
             }
-
         }
 
         static public void LastSave()
@@ -96,8 +103,9 @@ namespace CBEditor
             iniFile.WriteInteger(Section, "MainFormTop", MainFormTop);
             iniFile.WriteInteger(Section, "MainFormWidth", MainFormWidht);
             iniFile.WriteInteger(Section, "MainFormHeight", MainFormHeight);
-            iniFile.WriteInteger(Section, "MainLeftPanelWidth", MainLeftPanelWidth);
+            iniFile.WriteInteger(Section, "MainDownPanelHeight", MainDownPanelHeight);
             iniFile.WriteInteger(Section, "MainRightPanelWidth", MainRightPanelWidth);
+            iniFile.WriteInteger(Section, "MainLeftPanelWidth", MainLeftPanelWidth);
 
             Section = "File";
 
@@ -128,8 +136,9 @@ namespace CBEditor
             MainFormTop = iniFile.ReadInteger(Section, "MainFormTop", -1);
             MainFormWidht = iniFile.ReadInteger(Section, "MainFormWidth", 0);
             MainFormHeight = iniFile.ReadInteger(Section, "MainFormHeight", 0);
-            MainLeftPanelWidth = iniFile.ReadInteger(Section, "MainLeftPanelWidth", 0);
+            MainDownPanelHeight = iniFile.ReadInteger(Section, "MainDownPanelHeight", 0);
             MainRightPanelWidth = iniFile.ReadInteger(Section, "MainRightPanelWidth", 0);
+            MainLeftPanelWidth = iniFile.ReadInteger(Section, "MainLeftPanelWidth", 0);
 
             Section = "File";
 
@@ -200,21 +209,29 @@ namespace CBEditor
                 Font = Properties.Settings.Default.Font;
             }
 
-            // 單次按鈕
+            // 下方（單次）按鈕
             int singleButtonCount = iniFile.ReadInteger(Section, "SingleButtonCount", 0);
-            SingleList.Clear();
+            DownList.Clear();
             for(int i = 0; i < singleButtonCount; i++) {
                 string fieldName = "SingleButton" + i.ToString();
                 string sItem = iniFile.ReadString(Section, fieldName, "");
-                SingleList.Add(sItem);
+                DownList.Add(sItem);
             }
-            // 連續按鈕
+            // 右方（連續）按鈕
             int continueButtonCount = iniFile.ReadInteger(Section, "ContinueButtonCount", 0);
-            ContinueList.Clear();
+            RightList.Clear();
             for(int i = 0; i < continueButtonCount; i++) {
                 string fieldName = "ContinueButton" + i.ToString();
                 string sItem = iniFile.ReadString(Section, fieldName, "");
-                ContinueList.Add(sItem);
+                RightList.Add(sItem);
+            }
+            // 左方（連續）按鈕
+            int leftButtonCount = iniFile.ReadInteger(Section, "LeftButtonCount", 0);
+            LeftList.Clear();
+            for (int i = 0; i < leftButtonCount; i++) {
+                string fieldName = "LeftButton" + i.ToString();
+                string sItem = iniFile.ReadString(Section, fieldName, "");
+                LeftList.Add(sItem);
             }
         }
     }

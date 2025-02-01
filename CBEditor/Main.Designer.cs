@@ -82,12 +82,18 @@ namespace CBEditor
             this.按鈕說明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.關於AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelDown = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbContinueSignText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.panelLeft = new System.Windows.Forms.Panel();
+            this.splitter3 = new System.Windows.Forms.Splitter();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.關閉toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.關閉ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -100,8 +106,10 @@ namespace CBEditor
             this.新增NToolStripButton,
             this.開啟OToolStripButton,
             this.儲存SToolStripButton,
-            this.列印PToolStripButton,
+            this.toolStripSeparator10,
+            this.關閉ToolStripButton,
             this.toolStripSeparator6,
+            this.列印PToolStripButton,
             this.剪下UToolStripButton,
             this.複製CToolStripButton,
             this.貼上PToolStripButton,
@@ -245,6 +253,8 @@ namespace CBEditor
             this.toolStripSeparator,
             this.儲存SToolStripMenuItem,
             this.另存新檔AToolStripMenuItem,
+            this.toolStripSeparator9,
+            this.關閉toolStripMenuItem,
             this.toolStripSeparator1,
             this.列印PToolStripMenuItem,
             this.預覽列印VToolStripMenuItem,
@@ -458,10 +468,10 @@ namespace CBEditor
             resources.ApplyResources(this.關於AToolStripMenuItem, "關於AToolStripMenuItem");
             this.關於AToolStripMenuItem.Click += new System.EventHandler(this.關於AToolStripMenuItem_Click);
             // 
-            // panelLeft
+            // panelDown
             // 
-            resources.ApplyResources(this.panelLeft, "panelLeft");
-            this.panelLeft.Name = "panelLeft";
+            resources.ApplyResources(this.panelDown, "panelDown");
+            this.panelDown.Name = "panelDown";
             // 
             // panelRight
             // 
@@ -493,17 +503,53 @@ namespace CBEditor
             this.lbContinueSignText.Name = "lbContinueSignText";
             resources.ApplyResources(this.lbContinueSignText, "lbContinueSignText");
             // 
+            // panelLeft
+            // 
+            resources.ApplyResources(this.panelLeft, "panelLeft");
+            this.panelLeft.Name = "panelLeft";
+            // 
+            // splitter3
+            // 
+            resources.ApplyResources(this.splitter3, "splitter3");
+            this.splitter3.Name = "splitter3";
+            this.splitter3.TabStop = false;
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
+            // 
+            // 關閉toolStripMenuItem
+            // 
+            this.關閉toolStripMenuItem.Name = "關閉toolStripMenuItem";
+            resources.ApplyResources(this.關閉toolStripMenuItem, "關閉toolStripMenuItem");
+            this.關閉toolStripMenuItem.Click += new System.EventHandler(this.關閉toolStripMenuItem_Click);
+            // 
+            // 關閉ToolStripButton
+            // 
+            this.關閉ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.關閉ToolStripButton, "關閉ToolStripButton");
+            this.關閉ToolStripButton.Name = "關閉ToolStripButton";
+            this.關閉ToolStripButton.Click += new System.EventHandler(this.關閉ToolStripButton_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.splitter3);
             this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.panelDown);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.splitter2);
             this.Controls.Add(this.panelRight);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.statusStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -563,7 +609,7 @@ namespace CBEditor
         private System.Windows.Forms.ToolStripMenuItem 搜尋SToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem 關於AToolStripMenuItem;
-        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelDown;
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Splitter splitter2;
@@ -581,6 +627,12 @@ namespace CBEditor
         private System.Windows.Forms.ToolStripButton tsbUndo;
         private System.Windows.Forms.ToolStripButton tsbRedo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Splitter splitter3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem 關閉toolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton 關閉ToolStripButton;
     }
 }
 

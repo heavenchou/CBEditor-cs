@@ -20,8 +20,9 @@ namespace CBEditor
         MDIForm childForm;
         OptionForm optionForm = new OptionForm();
         string ProgramName = "CBEditor";
-        List<Button> SingleButtonList = new List<Button>();
-        List<Button> ContinueButtonList = new List<Button>();
+        List<Button> DownButtonList = new List<Button>();
+        List<Button> RightButtonList = new List<Button>();
+        List<Button> LeftButtonList = new List<Button>();
         public string sContinueSign = "";
         public MainForm()
         {
@@ -46,8 +47,9 @@ namespace CBEditor
             Setting.MainFormTop = Top;
             Setting.MainFormWidht = Width;
             Setting.MainFormHeight = Height;
-            Setting.MainLeftPanelWidth = panelLeft.Height;
+            Setting.MainDownPanelHeight = panelDown.Height;
             Setting.MainRightPanelWidth = panelRight.Width;
+            Setting.MainLeftPanelWidth = panelLeft.Width;
 
             Setting.LastSave();
         }
@@ -160,9 +162,10 @@ namespace CBEditor
         // 更新設定內容
         public void ChangeSetting()
         { 
-            LoadDownButton();         // 載入單次的按鈕
-            LoadRightButton();       // 載入連續的按鈕
-            
+            LoadDownButton();        // 載入下方（單次）的按鈕
+            LoadRightButton();       // 載入右方連續的按鈕
+            LoadLeftButton();        // 載入左方連續的按鈕
+
             childForm.ChangeSetting();
         }
 
@@ -181,46 +184,49 @@ namespace CBEditor
             if(Setting.MainFormHeight != 0) {
                 Height = Setting.MainFormHeight;
             }
-            if(Setting.MainLeftPanelWidth != 0) {
-                panelLeft.Height = Setting.MainLeftPanelWidth;
+            if(Setting.MainDownPanelHeight != 0) {
+                panelDown.Height = Setting.MainDownPanelHeight;
             }
             if(Setting.MainRightPanelWidth != 0) {
                 panelRight.Width = Setting.MainRightPanelWidth;
             }
+            if (Setting.MainLeftPanelWidth != 0) {
+                panelLeft.Width = Setting.MainLeftPanelWidth;
+            }
         }
 
-        // 載入單次的按鈕
+        // 載入下方（單次）的按鈕
         void LoadDownButton()
         {
-            foreach(var button in SingleButtonList) {
+            foreach(var button in DownButtonList) {
                 button.Dispose();
             }
-            SingleButtonList.Clear();
-            //for(int i = Setting.SingleList.Count; i > 0; i--) {
-            for(int i = 0; i < Setting.SingleList.Count; i++) {
+            DownButtonList.Clear();
+            //for(int i = Setting.DownList.Count; i > 0; i--) {
+            for(int i = 0; i < Setting.DownList.Count; i++) {
                 Button button = new Button();
-                button.Text = Setting.SingleList[i];
-                button.Parent = panelLeft;
+                button.Text = Setting.DownList[i];
+                button.Parent = panelDown;
                 button.Dock = DockStyle.Right;
                 //button.AutoSize = true;
                 button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
                 button.Width = TextRenderer.MeasureText(button.Text, button.Font).Width + 10;
                 button.Click += CheckButtonClick;
                 //button.MouseDown += CheckButtonClick;
-                SingleButtonList.Add(button);
+                DownButtonList.Add(button);
             }
         }
 
-        // 載入連續的按鈕
+        // 載入右方（連續）的按鈕
         void LoadRightButton()
         {
-            foreach(var button in ContinueButtonList) {
+            foreach(var button in RightButtonList) {
                 button.Dispose();
             }
-            ContinueButtonList.Clear();
-            for(int i = Setting.ContinueList.Count; i > 0; i--) {
+            RightButtonList.Clear();
+            for(int i = Setting.RightList.Count; i > 0; i--) {
                 Button button = new Button();
-                button.Text = Setting.ContinueList[i - 1];
+                button.Text = Setting.RightList[i - 1];
                 button.Parent = panelRight;
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
@@ -228,7 +234,28 @@ namespace CBEditor
                 button.Click += CheckButtonClick;
 
                 //button.MouseDown += CheckButtonClick;
-                ContinueButtonList.Add(button);
+                RightButtonList.Add(button);
+            }
+        }
+
+        // 載入左方（連續）的按鈕
+        void LoadLeftButton()
+        {
+            foreach (var button in LeftButtonList) {
+                button.Dispose();
+            }
+            LeftButtonList.Clear();
+            for (int i = 0; i < Setting.LeftList.Count; i++) {
+                Button button = new Button();
+                button.Text = Setting.LeftList[i];
+                button.Parent = panelLeft;
+                button.Dock = DockStyle.Top;
+                button.AutoSize = true;
+                button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
+                button.Click += CheckButtonClick;
+
+                //button.MouseDown += CheckButtonClick;
+                LeftButtonList.Add(button);
             }
         }
 
@@ -288,10 +315,13 @@ namespace CBEditor
         }
         private void UnColorAllButton()
         {
-            foreach(Button button in ContinueButtonList) {
+            foreach(Button button in RightButtonList) {
                 button.BackColor = Color.Transparent;
             }
-            foreach(Button button in SingleButtonList) {
+            foreach(Button button in DownButtonList) {
+                button.BackColor = Color.Transparent;
+            }
+            foreach(Button button in LeftButtonList) {
                 button.BackColor = Color.Transparent;
             }
         }
@@ -415,6 +445,16 @@ namespace CBEditor
             if(result == DialogResult.OK) {
                 ChangeSetting();
             }
+        }
+
+        private void 關閉toolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            childForm.OpenNewFile();
+        }
+
+        private void 關閉ToolStripButton_Click(object sender, EventArgs e)
+        {
+            childForm.OpenNewFile();
         }
     }
 }

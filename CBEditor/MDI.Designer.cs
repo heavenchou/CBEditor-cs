@@ -48,6 +48,7 @@ namespace CBEditor
             this.RichText.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::CBEditor.Properties.Settings.Default, "Font", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.RichText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RichText.Font = global::CBEditor.Properties.Settings.Default.Font;
+            this.RichText.HideSelection = false;
             this.RichText.Location = new System.Drawing.Point(0, 0);
             this.RichText.Name = "RichText";
             this.RichText.Size = new System.Drawing.Size(591, 450);

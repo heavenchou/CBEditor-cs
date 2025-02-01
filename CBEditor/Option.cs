@@ -44,12 +44,17 @@ namespace CBEditor
             fontDialog.Font = Setting.Font;
 
             lbDownList.Items.Clear();
-            foreach(var item in Setting.SingleList) {
+            foreach(var item in Setting.DownList) {
                 lbDownList.Items.Add(item);
             }
 
+            lbLeftList.Items.Clear();
+            foreach (var item in Setting.LeftList) {
+                lbLeftList.Items.Add(item);
+            }
+
             lbRightList.Items.Clear();
-            foreach(var item in Setting.ContinueList) {
+            foreach(var item in Setting.RightList) {
                 lbRightList.Items.Add(item);
             }
         }
@@ -76,15 +81,20 @@ namespace CBEditor
             Setting.BackColor = btSetBackColor.BackColor;
             Setting.Font = fontDialog.Font;
 
-            // 儲存單次標點
-            Setting.SingleList.Clear();
-            foreach(var item in lbDownList.Items) {
-                Setting.SingleList.Add(item.ToString());
+            // 儲存左方（連續）標點
+            Setting.LeftList.Clear();
+            foreach (var item in lbLeftList.Items) {
+                Setting.LeftList.Add(item.ToString());
             }
-            // 儲存連續標點
-            Setting.ContinueList.Clear();
+            // 儲存下方（單次）標點
+            Setting.DownList.Clear();
+            foreach(var item in lbDownList.Items) {
+                Setting.DownList.Add(item.ToString());
+            }
+            // 儲存右方（連續）標點
+            Setting.RightList.Clear();
             foreach(var item in lbRightList.Items) {
-                Setting.ContinueList.Add(item.ToString());
+                Setting.RightList.Add(item.ToString());
             }
 
             Setting.SaveToFile();
@@ -118,13 +128,26 @@ namespace CBEditor
             }
         }
 
+        // 左方 panel 標點新增一筆
+
+        private void btLeftAdd_Click(object sender, EventArgs e)
+        {
+            if (tbLeftStart.Text != "") {
+                string s = tbLeftStart.Text;
+                if (tbLeftEnd.Text != "") {
+                    s += " ... " + tbLeftEnd.Text;
+                }
+                lbLeftList.Items.Add(s);
+            }
+        }
+
         // 單次標點新增一筆
         private void btDownAdd_Click(object sender, EventArgs e)
         {
             if(tbDownStart.Text != "") {
                 string s = tbDownStart.Text;
-                if(tbSingleEnd.Text != "") {
-                    s += " ... " + tbSingleEnd.Text;
+                if(tbDownEnd.Text != "") {
+                    s += " ... " + tbDownEnd.Text;
                 }
                 lbDownList.Items.Add(s);
             }
@@ -136,14 +159,31 @@ namespace CBEditor
         {
             if(tbRightStart.Text != "") {
                 string s = tbRightStart.Text;
-                if(tbContinueEnd.Text != "") {
-                    s += " ... " + tbContinueEnd.Text;
+                if(tbRightEnd.Text != "") {
+                    s += " ... " + tbRightEnd.Text;
                 }
                 lbRightList.Items.Add(s);
             }
         }
 
+
         // 刪除一筆
+
+        private void btLeftDel_Click(object sender, EventArgs e)
+        {
+            int index = lbLeftList.SelectedIndex;
+            if (index != -1) {
+                lbLeftList.Items.RemoveAt(index);
+                if (lbLeftList.Items.Count > 0) {
+                    if (index < lbLeftList.Items.Count) {
+                        lbLeftList.SelectedIndex = index;
+                    } else {
+                        lbLeftList.SelectedIndex = index - 1;
+                    }
+                }
+            }
+        }
+
         private void btDownDel_Click(object sender, EventArgs e)
         {
             int index = lbDownList.SelectedIndex;
@@ -174,6 +214,19 @@ namespace CBEditor
         }
 
         // 上移一筆
+
+
+        private void btLeftUp_Click(object sender, EventArgs e)
+        {
+            int index = lbLeftList.SelectedIndex;
+            if (index > 0) {
+                var item = lbLeftList.Items[index];
+                lbLeftList.Items[index] = lbLeftList.Items[index - 1];
+                lbLeftList.Items[index - 1] = item;
+                lbLeftList.SelectedIndex = index - 1;
+            }
+        }
+
         private void btDownUp_Click(object sender, EventArgs e)
         {
             int index = lbDownList.SelectedIndex;
@@ -197,6 +250,18 @@ namespace CBEditor
         }
 
         // 下移一筆
+
+        private void btLeftDown_Click(object sender, EventArgs e)
+        {
+            int index = lbLeftList.SelectedIndex;
+            if (index != -1 && index != lbLeftList.Items.Count - 1) {
+                var item = lbLeftList.Items[index];
+                lbLeftList.Items[index] = lbLeftList.Items[index + 1];
+                lbLeftList.Items[index + 1] = item;
+                lbLeftList.SelectedIndex = index + 1;
+            }
+        }
+
         private void btDownDown_Click(object sender, EventArgs e)
         {
             int index = lbDownList.SelectedIndex;
@@ -219,6 +284,38 @@ namespace CBEditor
             }
         }
 
+        // 移到其它 Panel
+        // 左方 panel 移到下方 Panel
+        private void btLeft2Down_Click(object sender, EventArgs e)
+        {
+            int index = lbLeftList.SelectedIndex;
+            if (index != -1) {
+                string s = lbLeftList.Items[index].ToString();
+                lbDownList.Items.Add(s);
+                btLeftDel_Click(sender, e);
+            }
+        }
+        // 右方 panel 移到下方 Panel
+        private void btRight2Down_Click(object sender, EventArgs e)
+        {
+            int index = lbRightList.SelectedIndex;
+            if (index != -1) {
+                string s = lbRightList.Items[index].ToString();
+                lbDownList.Items.Add(s);
+                btRightDel_Click(sender, e);
+            }
+        }
+        // 下方 panel 移到左方 Panel
+        private void btDown2Left_Click(object sender, EventArgs e)
+        {
+            int index = lbDownList.SelectedIndex;
+            if (index != -1) {
+                string s = lbDownList.Items[index].ToString();
+                lbLeftList.Items.Add(s);
+                btDownDel_Click(sender, e);
+            }
+        }
+        // 下方 panel 移到右方 Panel
         private void btDown2Right_Click(object sender, EventArgs e)
         {
             int index = lbDownList.SelectedIndex;
@@ -228,13 +325,23 @@ namespace CBEditor
                 btDownDel_Click(sender, e);
             }
         }
-
-        private void btRight2Down_Click(object sender, EventArgs e)
+        // 左方 panel 移到右方 Panel
+        private void btLeft2Right_Click(object sender, EventArgs e)
+        {
+            int index = lbLeftList.SelectedIndex;
+            if (index != -1) {
+                string s = lbLeftList.Items[index].ToString();
+                lbRightList.Items.Add(s);
+                btLeftDel_Click(sender, e);
+            }
+        }
+        // 右方 panel 移到左方 Panel
+        private void btRight2Left_Click(object sender, EventArgs e)
         {
             int index = lbRightList.SelectedIndex;
-            if(index != -1) {
+            if (index != -1) {
                 string s = lbRightList.Items[index].ToString();
-                lbDownList.Items.Add(s);
+                lbLeftList.Items.Add(s);
                 btRightDel_Click(sender, e);
             }
         }
