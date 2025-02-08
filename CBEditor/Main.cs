@@ -252,7 +252,8 @@ namespace CBEditor
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
                 button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
-                button.Click += CheckButtonClick;
+                //button.Click += CheckButtonClick;
+                button.Click += SingleButtonClick;  // 左方按鈕只能單次
 
                 //button.MouseDown += CheckButtonClick;
                 LeftButtonList.Add(button);
@@ -262,7 +263,7 @@ namespace CBEditor
         // 檢查有沒有按下 Ctrl，以判斷要執行哪個功能
         private void CheckButtonClick(object sender, EventArgs e)
         {
-            if((ModifierKeys & Keys.Control) == Keys.Control) {
+            if ((ModifierKeys & Keys.Control) == Keys.Control) {
                 SingleButtonClick(sender, e);
             } else {
                 ContinueButtonClick(sender, e);
