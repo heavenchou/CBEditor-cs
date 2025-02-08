@@ -245,9 +245,9 @@ namespace CBEditor
                 button.Dispose();
             }
             LeftButtonList.Clear();
-            for (int i = 0; i < Setting.LeftList.Count; i++) {
+            for (int i = Setting.LeftList.Count; i > 0; i--) {
                 Button button = new Button();
-                button.Text = Setting.LeftList[i];
+                button.Text = Setting.LeftList[i - 1];
                 button.Parent = panelLeft;
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;

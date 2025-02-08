@@ -10,8 +10,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CBETA")]
 [assembly: AssemblyProduct("CBEditor")]
-[assembly: AssemblyCopyright("Copyright © 2021 Heaven Chou")]
-[assembly: AssemblyTrademark("Copyright © 1998-2021 CBETA")]
+[assembly: AssemblyCopyright("Copyright © 2021-2025 Heaven Chou")]
+[assembly: AssemblyTrademark("Copyright © 1998-2025 CBETA")]
 [assembly: AssemblyCulture("")]
 
 // 將 ComVisible 設為 false 可對 COM 元件隱藏
