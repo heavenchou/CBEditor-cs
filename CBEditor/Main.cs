@@ -211,8 +211,14 @@ namespace CBEditor
                 //button.AutoSize = true;
                 button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
                 button.Width = TextRenderer.MeasureText(button.Text, button.Font).Width + 10;
-                button.Click += CheckButtonClick;
+                //button.Click += CheckButtonClick;
                 //button.MouseDown += CheckButtonClick;
+
+                if (Setting.DownIsSingle) {
+                    button.Click += SingleButtonClick;
+                } else {
+                    button.Click += CheckButtonClick;
+                }
                 DownButtonList.Add(button);
             }
         }
@@ -231,7 +237,13 @@ namespace CBEditor
                 button.Dock = DockStyle.Top;
                 button.AutoSize = true;
                 button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
-                button.Click += CheckButtonClick;
+                //button.Click += CheckButtonClick;
+
+                if (Setting.RightIsSingle) {
+                    button.Click += SingleButtonClick;
+                } else {
+                    button.Click += CheckButtonClick;
+                }
 
                 //button.MouseDown += CheckButtonClick;
                 RightButtonList.Add(button);
@@ -253,7 +265,12 @@ namespace CBEditor
                 button.AutoSize = true;
                 button.Font = new System.Drawing.Font(button.Font.Name, Setting.ButtonFontSize);
                 //button.Click += CheckButtonClick;
-                button.Click += SingleButtonClick;  // 左方按鈕只能單次
+                //button.Click += SingleButtonClick;  // 左方按鈕只能單次
+                if(Setting.LeftIsSingle) {
+                    button.Click += SingleButtonClick;
+                } else {
+                    button.Click += CheckButtonClick;
+                }
 
                 //button.MouseDown += CheckButtonClick;
                 LeftButtonList.Add(button);
@@ -297,6 +314,7 @@ namespace CBEditor
             }
 
             childForm.RichText.SelectedText = sStart + childForm.RichText.SelectedText + sEnd;
+            childForm.RichText.Focus();
         }
         private void ContinueButtonClick(object sender, EventArgs e)
         {
@@ -313,6 +331,7 @@ namespace CBEditor
                 sContinueSign = button.Text;
                 button.BackColor = Color.Yellow;
             }
+            childForm.RichText.Focus();
         }
         private void UnColorAllButton()
         {

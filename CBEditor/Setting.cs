@@ -34,6 +34,10 @@ namespace CBEditor
         static public List<string> RightList = new List<string>();
         static public List<string> DownList = new List<string>();
 
+        static public bool LeftIsSingle = false;    // 記錄左方按鈕是連續還是單次
+        static public bool RightIsSingle = false;   // 記錄右方按鈕是連續還是單次
+        static public bool DownIsSingle = false;     // 記錄下方按鈕是連續還是單次
+
         static public List<string> OpenFileName = new List<string>();   // 曾經開啟過的檔名
         static public List<int> OpenFilePos = new List<int>();          // 曾經開啟過的檔案最後編輯位置
 
@@ -71,6 +75,10 @@ namespace CBEditor
             iniFile.WriteBool(Section, "FontItalic", Font.Italic);
             iniFile.WriteBool(Section, "FontUnderline", Font.Underline);
             iniFile.WriteBool(Section, "FontStrikeout", Font.Strikeout);
+
+            iniFile.WriteBool(Section, "LeftIsSingle", LeftIsSingle);
+            iniFile.WriteBool(Section, "RightIsSingle", RightIsSingle);
+            iniFile.WriteBool(Section, "DownIsSingle", DownIsSingle);
 
             // 左方（連續）按鈕
             iniFile.WriteInteger(Section, "LeftButtonCount", LeftList.Count);
@@ -208,6 +216,10 @@ namespace CBEditor
             } else {
                 Font = Properties.Settings.Default.Font;
             }
+
+            LeftIsSingle = iniFile.ReadBool(Section, "LeftIsSingle", LeftIsSingle);
+            RightIsSingle = iniFile.ReadBool(Section, "RightIsSingle", RightIsSingle);
+            DownIsSingle = iniFile.ReadBool(Section, "DownIsSingle", DownIsSingle);
 
             // 下方（單次）按鈕
             int singleButtonCount = iniFile.ReadInteger(Section, "SingleButtonCount", 0);

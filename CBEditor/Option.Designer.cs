@@ -49,6 +49,7 @@ namespace CBEditor
             this.label1 = new System.Windows.Forms.Label();
             this.tpButton = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btRight2Left = new System.Windows.Forms.Button();
             this.btRight2Down = new System.Windows.Forms.Button();
             this.lbRightList = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,6 +63,7 @@ namespace CBEditor
             this.btContinueDel = new System.Windows.Forms.Button();
             this.btContinueAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btDown2Left = new System.Windows.Forms.Button();
             this.btDown2Right = new System.Windows.Forms.Button();
             this.lbDownList = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -75,6 +77,7 @@ namespace CBEditor
             this.btSingleDel = new System.Windows.Forms.Button();
             this.btSingleAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btLeft2Right = new System.Windows.Forms.Button();
             this.btLeft2Down = new System.Windows.Forms.Button();
             this.lbLeftList = new System.Windows.Forms.ListBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -92,9 +95,9 @@ namespace CBEditor
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btLeft2Right = new System.Windows.Forms.Button();
-            this.btRight2Left = new System.Windows.Forms.Button();
-            this.btDown2Left = new System.Windows.Forms.Button();
+            this.cbLeftSingle = new System.Windows.Forms.CheckBox();
+            this.cbDownSingle = new System.Windows.Forms.CheckBox();
+            this.cbRightSingle = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tpNormal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbBackupTime)).BeginInit();
@@ -140,7 +143,7 @@ namespace CBEditor
             this.tpNormal.Location = new System.Drawing.Point(4, 34);
             this.tpNormal.Name = "tpNormal";
             this.tpNormal.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNormal.Size = new System.Drawing.Size(879, 413);
+            this.tpNormal.Size = new System.Drawing.Size(885, 413);
             this.tpNormal.TabIndex = 0;
             this.tpNormal.Text = "一般";
             this.tpNormal.UseVisualStyleBackColor = true;
@@ -373,6 +376,16 @@ namespace CBEditor
             this.panel2.Size = new System.Drawing.Size(291, 407);
             this.panel2.TabIndex = 1;
             // 
+            // btRight2Left
+            // 
+            this.btRight2Left.Location = new System.Drawing.Point(193, 290);
+            this.btRight2Left.Name = "btRight2Left";
+            this.btRight2Left.Size = new System.Drawing.Size(88, 33);
+            this.btRight2Left.TabIndex = 15;
+            this.btRight2Left.Text = "←←左";
+            this.btRight2Left.UseVisualStyleBackColor = true;
+            this.btRight2Left.Click += new System.EventHandler(this.btRight2Left_Click);
+            // 
             // btRight2Down
             // 
             this.btRight2Down.Location = new System.Drawing.Point(193, 329);
@@ -395,6 +408,7 @@ namespace CBEditor
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.cbRightSingle);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Controls.Add(this.tbRightEnd);
             this.panel5.Controls.Add(this.label7);
@@ -505,6 +519,16 @@ namespace CBEditor
             this.panel1.Size = new System.Drawing.Size(295, 407);
             this.panel1.TabIndex = 0;
             // 
+            // btDown2Left
+            // 
+            this.btDown2Left.Location = new System.Drawing.Point(193, 290);
+            this.btDown2Left.Name = "btDown2Left";
+            this.btDown2Left.Size = new System.Drawing.Size(88, 33);
+            this.btDown2Left.TabIndex = 12;
+            this.btDown2Left.Text = "←左";
+            this.btDown2Left.UseVisualStyleBackColor = true;
+            this.btDown2Left.Click += new System.EventHandler(this.btDown2Left_Click);
+            // 
             // btDown2Right
             // 
             this.btDown2Right.Location = new System.Drawing.Point(193, 329);
@@ -527,6 +551,7 @@ namespace CBEditor
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.cbDownSingle);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
@@ -637,6 +662,16 @@ namespace CBEditor
             this.panel6.Size = new System.Drawing.Size(293, 407);
             this.panel6.TabIndex = 2;
             // 
+            // btLeft2Right
+            // 
+            this.btLeft2Right.Location = new System.Drawing.Point(193, 290);
+            this.btLeft2Right.Name = "btLeft2Right";
+            this.btLeft2Right.Size = new System.Drawing.Size(88, 33);
+            this.btLeft2Right.TabIndex = 14;
+            this.btLeft2Right.Text = "右→→";
+            this.btLeft2Right.UseVisualStyleBackColor = true;
+            this.btLeft2Right.Click += new System.EventHandler(this.btLeft2Right_Click);
+            // 
             // btLeft2Down
             // 
             this.btLeft2Down.Location = new System.Drawing.Point(193, 329);
@@ -659,6 +694,7 @@ namespace CBEditor
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.cbLeftSingle);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.tbLeftEnd);
             this.panel7.Controls.Add(this.label14);
@@ -783,35 +819,35 @@ namespace CBEditor
             this.panel3.Size = new System.Drawing.Size(893, 54);
             this.panel3.TabIndex = 3;
             // 
-            // btLeft2Right
+            // cbLeftSingle
             // 
-            this.btLeft2Right.Location = new System.Drawing.Point(193, 290);
-            this.btLeft2Right.Name = "btLeft2Right";
-            this.btLeft2Right.Size = new System.Drawing.Size(88, 33);
-            this.btLeft2Right.TabIndex = 14;
-            this.btLeft2Right.Text = "右→→";
-            this.btLeft2Right.UseVisualStyleBackColor = true;
-            this.btLeft2Right.Click += new System.EventHandler(this.btLeft2Right_Click);
+            this.cbLeftSingle.AutoSize = true;
+            this.cbLeftSingle.Location = new System.Drawing.Point(162, 11);
+            this.cbLeftSingle.Name = "cbLeftSingle";
+            this.cbLeftSingle.Size = new System.Drawing.Size(114, 29);
+            this.cbLeftSingle.TabIndex = 12;
+            this.cbLeftSingle.Text = "單次標點";
+            this.cbLeftSingle.UseVisualStyleBackColor = true;
             // 
-            // btRight2Left
+            // cbDownSingle
             // 
-            this.btRight2Left.Location = new System.Drawing.Point(193, 290);
-            this.btRight2Left.Name = "btRight2Left";
-            this.btRight2Left.Size = new System.Drawing.Size(88, 33);
-            this.btRight2Left.TabIndex = 15;
-            this.btRight2Left.Text = "←←左";
-            this.btRight2Left.UseVisualStyleBackColor = true;
-            this.btRight2Left.Click += new System.EventHandler(this.btRight2Left_Click);
+            this.cbDownSingle.AutoSize = true;
+            this.cbDownSingle.Location = new System.Drawing.Point(167, 11);
+            this.cbDownSingle.Name = "cbDownSingle";
+            this.cbDownSingle.Size = new System.Drawing.Size(114, 29);
+            this.cbDownSingle.TabIndex = 13;
+            this.cbDownSingle.Text = "單次標點";
+            this.cbDownSingle.UseVisualStyleBackColor = true;
             // 
-            // btDown2Left
+            // cbRightSingle
             // 
-            this.btDown2Left.Location = new System.Drawing.Point(193, 290);
-            this.btDown2Left.Name = "btDown2Left";
-            this.btDown2Left.Size = new System.Drawing.Size(88, 33);
-            this.btDown2Left.TabIndex = 12;
-            this.btDown2Left.Text = "←左";
-            this.btDown2Left.UseVisualStyleBackColor = true;
-            this.btDown2Left.Click += new System.EventHandler(this.btDown2Left_Click);
+            this.cbRightSingle.AutoSize = true;
+            this.cbRightSingle.Location = new System.Drawing.Point(167, 11);
+            this.cbRightSingle.Name = "cbRightSingle";
+            this.cbRightSingle.Size = new System.Drawing.Size(114, 29);
+            this.cbRightSingle.TabIndex = 13;
+            this.cbRightSingle.Text = "單次標點";
+            this.cbRightSingle.UseVisualStyleBackColor = true;
             // 
             // OptionForm
             // 
@@ -915,5 +951,8 @@ namespace CBEditor
         private System.Windows.Forms.Button btRight2Left;
         private System.Windows.Forms.Button btDown2Left;
         private System.Windows.Forms.Button btLeft2Right;
+        private System.Windows.Forms.CheckBox cbRightSingle;
+        private System.Windows.Forms.CheckBox cbDownSingle;
+        private System.Windows.Forms.CheckBox cbLeftSingle;
     }
 }

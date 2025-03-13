@@ -43,6 +43,10 @@ namespace CBEditor
             btSetBackColor.BackColor = Setting.BackColor;
             fontDialog.Font = Setting.Font;
 
+            cbLeftSingle.Checked = Setting.LeftIsSingle;
+            cbRightSingle.Checked = Setting.RightIsSingle;
+            cbDownSingle.Checked = Setting.DownIsSingle;
+
             lbDownList.Items.Clear();
             foreach(var item in Setting.DownList) {
                 lbDownList.Items.Add(item);
@@ -96,6 +100,10 @@ namespace CBEditor
             foreach(var item in lbRightList.Items) {
                 Setting.RightList.Add(item.ToString());
             }
+
+            Setting.LeftIsSingle = cbLeftSingle.Checked;
+            Setting.RightIsSingle = cbRightSingle.Checked;
+            Setting.DownIsSingle = cbDownSingle.Checked;
 
             Setting.SaveToFile();
         }
