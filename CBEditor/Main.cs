@@ -17,7 +17,7 @@ namespace CBEditor
     public partial class MainForm : Form
     {
         string SetupLanguage;
-        MDIForm childForm;
+        public MDIForm childForm;
         OptionForm optionForm = new OptionForm();
         string ProgramName = "CBEditor";
         List<Button> DownButtonList = new List<Button>();
@@ -475,6 +475,13 @@ namespace CBEditor
         private void 關閉ToolStripButton_Click(object sender, EventArgs e)
         {
             childForm.OpenNewFile();
+        }
+
+        private void 取代ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReplaceForm replaceForm = new ReplaceForm();
+            replaceForm.mainForm = this;
+            replaceForm.ShowDialog();
         }
     }
 }

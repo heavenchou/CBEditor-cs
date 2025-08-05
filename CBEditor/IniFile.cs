@@ -43,7 +43,10 @@ namespace CBEditor
 
             byte[] buffer = new byte[1024];
             int count = GetPrivateProfileString(Section, Key, u8(Default), buffer, 255, FileName);
-            return Encoding.GetEncoding("utf-8").GetString(buffer, 0, count).Trim();
+            string result = Encoding.GetEncoding("utf-8").GetString(buffer, 0, count);
+            
+            // 移除換行符號和Tab但保留其他空白字元（包括全形空白）
+            return result.Replace("\r\n", "").Replace("\r", "").Replace("\n", "").Replace("\t", "");
         }
         public int ReadInteger(string Section, string Key, int Default)
         {
