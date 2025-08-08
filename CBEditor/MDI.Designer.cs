@@ -69,38 +69,38 @@ namespace CBEditor
             this.複製ToolStripMenuItem,
             this.貼上ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 106);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(99, 98);
             // 
             // 全選ToolStripMenuItem
             // 
             this.全選ToolStripMenuItem.Name = "全選ToolStripMenuItem";
-            this.全選ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.全選ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全選ToolStripMenuItem.Text = "全選";
             this.全選ToolStripMenuItem.Click += new System.EventHandler(this.全選ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(95, 6);
             // 
             // 剪下ToolStripMenuItem
             // 
             this.剪下ToolStripMenuItem.Name = "剪下ToolStripMenuItem";
-            this.剪下ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.剪下ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.剪下ToolStripMenuItem.Text = "剪下";
             this.剪下ToolStripMenuItem.Click += new System.EventHandler(this.剪下ToolStripMenuItem_Click);
             // 
             // 複製ToolStripMenuItem
             // 
             this.複製ToolStripMenuItem.Name = "複製ToolStripMenuItem";
-            this.複製ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.複製ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.複製ToolStripMenuItem.Text = "複製";
             this.複製ToolStripMenuItem.Click += new System.EventHandler(this.複製ToolStripMenuItem_Click);
             // 
             // 貼上ToolStripMenuItem
             // 
             this.貼上ToolStripMenuItem.Name = "貼上ToolStripMenuItem";
-            this.貼上ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.貼上ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.貼上ToolStripMenuItem.Text = "貼上";
             this.貼上ToolStripMenuItem.Click += new System.EventHandler(this.貼上ToolStripMenuItem_Click);
             // 
@@ -110,7 +110,9 @@ namespace CBEditor
             // 
             // openFileDialog
             // 
+            this.openFileDialog.AutoUpgradeEnabled = false;
             this.openFileDialog.Filter = "文字檔案(*.txt)|*.txt|所有檔案 (*.*)|*.*";
+            this.openFileDialog.RestoreDirectory = true;
             // 
             // timerBackup
             // 
@@ -125,7 +127,7 @@ namespace CBEditor
             this.ClientSize = new System.Drawing.Size(591, 450);
             this.ControlBox = false;
             this.Controls.Add(this.RichText);
-            this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

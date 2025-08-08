@@ -65,6 +65,7 @@ namespace CBEditor
             this.結束XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編輯EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.搜尋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.取代ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.尋找下一筆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.尋找上一筆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -345,6 +346,7 @@ namespace CBEditor
             // 
             this.編輯EToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.搜尋ToolStripMenuItem,
+            this.取代ToolStripMenuItem,
             this.尋找下一筆ToolStripMenuItem,
             this.尋找上一筆ToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -364,6 +366,12 @@ namespace CBEditor
             this.搜尋ToolStripMenuItem.Name = "搜尋ToolStripMenuItem";
             resources.ApplyResources(this.搜尋ToolStripMenuItem, "搜尋ToolStripMenuItem");
             this.搜尋ToolStripMenuItem.Click += new System.EventHandler(this.搜尋ToolStripMenuItem_Click);
+            // 
+            // 取代ToolStripMenuItem
+            // 
+            this.取代ToolStripMenuItem.Name = "取代ToolStripMenuItem";
+            resources.ApplyResources(this.取代ToolStripMenuItem, "取代ToolStripMenuItem");
+            this.取代ToolStripMenuItem.Click += new System.EventHandler(this.取代ToolStripMenuItem_Click);
             // 
             // 尋找下一筆ToolStripMenuItem
             // 
@@ -616,6 +624,7 @@ namespace CBEditor
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbContinueSignText;
         private System.Windows.Forms.ToolStripMenuItem 搜尋ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 取代ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripTextBox tbFindText;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

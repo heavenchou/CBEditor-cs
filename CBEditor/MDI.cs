@@ -14,6 +14,11 @@ namespace CBEditor
 {
     public partial class MDIForm : Form
     {
+        // RichEdit 設定
+        const int EM_SETOPTIONS = 0x044D;      // WM_USER + 77
+        const int ECOOP_AND = 0x0003;
+        const int ECO_AUTOWORDSELECTION = 0x00000001;
+
         bool IsTextChanged = false;     // 文字有沒有更改過
         string FileName = "";           // 檔名
         string BackupFileName = "";     // 備份檔名
@@ -35,6 +40,12 @@ namespace CBEditor
         public MDIForm()
         {
             InitializeComponent();
+            SendMessage(
+                RichText.Handle,
+                EM_SETOPTIONS,
+                (IntPtr)ECOOP_AND,
+                (IntPtr)(~ECO_AUTOWORDSELECTION)
+            );
         }
         public void RichTextUndo()
         {
